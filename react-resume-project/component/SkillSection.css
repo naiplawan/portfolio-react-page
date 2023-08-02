@@ -1,0 +1,16 @@
+.skillContainer{
+    display: flex;
+    flex-direction: row;
+}
+.skillBox{
+    height: 10rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.skillTitle{
+    font-weight: 700;
+    font-size: 1.5rem;
+}
