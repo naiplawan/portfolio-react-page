@@ -14,12 +14,22 @@
     justify-content: space-between;
     padding: 1rem;
 }
+.contentRightbox{
+    width:  50%;
+}
 .contactBox {
     background-color: hsla(223, 88%, 67%, 1);
 }
 .subtext{
     font-size: 2rem;
     font-weight: 800;
+}
+.seperator{
+    width: 2rem;
+}
+.maintext{
+    font-size: 0.7rem;
+    font-weight: 500;
 }
 .socialText {
     display: flex;
@@ -30,7 +40,7 @@
 .socialBox{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    align-items: center;
     padding: 2rem;
 }
 .buttonBox{

@@ -1,9 +1,10 @@
 .skillContainer{
     display: flex;
     flex-direction: row;
+    height: 2rem;
 }
 .skillBox{
-    height: 10rem;
+    height: 1rem;
     padding: 2rem;
     display: flex;
     flex-direction: column;

@@ -2,6 +2,11 @@ import React from "react";
 import "./HeaderSection.css";
 
 function HeaderSection() {
+  const githubProfileUrl = "https://github.com/naiplawan";
+  const handlePortfolioClick = () => {
+    // Navigate to the GitHub profile URL
+    window.location.href = githubProfileUrl;
+  };
     return (
       <div className="headerSection">
         {/* Right Box */}
@@ -13,7 +18,7 @@ function HeaderSection() {
         <div className="headerLeftBox">
           <div>About</div>
           <div>Passion</div>
-          <div>Portfolio</div>
+          <div className="portfolioLink" onClick={handlePortfolioClick}>Portfolio</div>
           <div className="contactBox">Contact Me</div>
         </div>
       </div>
