@@ -5,10 +5,11 @@
 }
 .skillBox{
     height: 1rem;
-    padding: 2rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-align: center;
     align-items: center;
 }
 .skillTitle{

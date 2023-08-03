@@ -21,8 +21,14 @@
   
 .headerRightBox{
     padding: 1rem;
+    width: 10rem;
     animation: rainbowAnimation 3s linear infinite;
     font-weight: 700;
+    border-radius: 10rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @keyframes rainbowAnimation {

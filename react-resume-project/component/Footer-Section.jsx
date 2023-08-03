@@ -10,12 +10,11 @@ function footerSection() {
             </div>
 
             <div className="centerFooterBox">
-            <div className="footerCenterText"> © Copyright 2023 | naiplawan</div>
+             © Copyright 2023 | naiplawan
             </div>
 
             <div className="rightFooterBox">
-            <img src="/Group 2.svg" alt="instagramIcon" />
-            <img src="" alt="" />
+            <img src="/icons8-pacman-50.png" alt="Pacman" />
             </div>
         </div>
     );
