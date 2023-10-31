@@ -1,19 +1,20 @@
-import HeaderSection from "../component/Header-Section";
-import ContentSection from "../component/Content-Section";
-import SkillSection from "../component/Skill-Section";
-import FooterSection from "../component/Footer-Section";
-import "./App.css";
+import NavBar from "./component/NavBar";
+import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
+import AboutPage from "./page/aboutPage.jsx";
+// import ContentSection from "./component/Content-Section";
+// import SkillSection from "./component/Skill-Section";
+// import FooterSection from "./component/Footer";
 
 function App() {
   return (
-    <div className="wrapper">
-    <HeaderSection />
-    <ContentSection />
-    <div className="centerText">Why Hire Me ?</div>
-    <SkillSection />
-    <div className="allSeperator"></div>
-    <FooterSection />
-    </div>
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path="/about">
+          <AboutPage />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 

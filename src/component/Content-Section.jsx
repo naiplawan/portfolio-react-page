@@ -13,15 +13,15 @@ function ContentSection() {
      };
 
   return (
-    <div className="contentSection">
+    <div className="w-full flex flex-row p-48">
       {/* Left Box */}
-      <div className="contentLeftbox">
+      <div className="w-full flex-col justify-between p-16">
         <div>Hi!</div>
           <div className="subtext"> I am  Rachaphol Plookaom </div>
           Web Developer 
         <div className="maintext"> I am passionate about applying my analytical skills and <br></br>attention to detail to ensure the quality and functionality of software products. </div>
         <div>
-          <div className="socialBox"><div className="socialText"> Follow me </div><div className="seperator"></div> <img src="/socialMedia.svg" alt="socialMedia" /> </div>
+          <div className="flex-row items-center"><div className="socialText"> Follow me </div><div className="seperator"></div> <img src="/socialMedia.svg" alt="socialMedia" /> </div>
         </div>
         <div className="buttonBox">
           <button>Send Request</button>
@@ -30,7 +30,7 @@ function ContentSection() {
       </div>
 
       {/* Right Box */}
-      <div className="contentRightbox">
+      <div className="w-1/2">
         <div>
           <img src="/heroImg.svg" alt="heroImage"/>
         </div>

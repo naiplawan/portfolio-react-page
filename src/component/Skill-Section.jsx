@@ -1,4 +1,3 @@
-import React from 'react';
 import SkillBox from './Skill-Box';
 import "./SkillSection.css";
 

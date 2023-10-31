@@ -1,4 +1,3 @@
-import React from 'react';
 import "./SkillSection.css";
 
 const SkillBox = ({ title, description, imageSrc }) => {

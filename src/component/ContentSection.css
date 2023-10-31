@@ -1,22 +1,4 @@
-:root{
-    font-size: 1.2rem;
-}
-.contentSection{
-    width:  100%;
-    display: flex;
-    flex-direction: row;
-    padding: 3rem;
-}
-.contentLeftbox{
-    width:  100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1rem;
-}
-.contentRightbox{
-    width:  50%;
-}
+
 .contactBox {
     background-color: hsla(223, 88%, 67%, 1);
 }
