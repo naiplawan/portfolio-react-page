@@ -4,20 +4,12 @@ import { RandomReveal } from "react-random-reveal";
 
 
 function ContentSection() {
-  const handleDownloadCV = () => {
-    const fileURL = "/Rachaphol-Resume.pdf";
-    const downloadLink = document.createElement("a");
-    downloadLink.href = fileURL;
-    downloadLink.download = "Rachaphol-Resume.pdf";
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-    document.body.removeChild(downloadLink);
-  };
-
+  
   return (
-    <div className="w-full h-full flex flex-row">
+    <div className="w-100 h-full flex flex-row
+    justify-center items-center mt-5 p-10">
       {/* Left Box */}
-      <div className="w-full flex-col justify-between p-16">  
+      <div className="w-auto h-full flex flex-col justify-center mr-20 ">  
         <Typewriter
           options={{
             strings: ["Hi !!","My name is Rachaphol", "Call me Momos"],
@@ -30,7 +22,7 @@ function ContentSection() {
             cursorClassName: "text-2xl",
             deleteSpeed: 100,
           }}
-          className="text-10xl m-4"
+          className="text-10xl m-4 w-full"
         />
         <div className="m-4" > 
         <RandomReveal
@@ -42,32 +34,17 @@ function ContentSection() {
         />
         </div>
         <div className="mt-2 ml-4 mb-4">
-          {" "}
           I am passionate about applying my analytical skills and <br></br>
           attention to detail to ensure the quality and functionality of
-          software products.{" "}
+          software products.
         </div>
-
-        <div>
-          <div className="flex-row items-center">
-            <div className="socialText"> Follow me </div>
-            <div className="m-4"></div>
-            <img src="/socialMedia.svg" alt="socialMedia" />
-        </div>
-
-        </div>
-        <div className="m-4">
-          <button className="btn w-50 rounded-full" >Send Request</button>
-          <button className="btn w-50 rounded-full" onClick={handleDownloadCV}>Download CV</button>
-        </div>
+        
       </div>
 
       {/* Right Box */}
-      <div className="w-1/2">
-        <div>
+        <div className="m-4 flex items-center ">
           <img src="/heroImg.svg" alt="heroImage" />
         </div>
-      </div>
     </div>
   );
 }

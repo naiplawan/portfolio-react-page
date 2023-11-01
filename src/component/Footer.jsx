@@ -1,25 +1,25 @@
-
 function Footer() {
   return (
-    <div className="h-full flex flex-col justify-between text-center">
-      <div className="rightFooterBox flex flex-row justify-between">
-        <img src="/Squircle.svg" alt="emailIcon" className="w-6 h-6" />
-        <div className="footerText text-gray-500 text-sm font-light">
-          rachaphol.plo@gmail.com
+    <>
+    <footer className="bg-gray-800 p-3 mt-10 text-center text-white">
+      <div className="container mx-auto">
+        <div className="flex justify-between items-center">
+          <div>
+            <h3 className="text-lg font-semibold">Contact</h3>
+            <p className="mt-2">rachaphol.plo@gmail.com</p>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold">About</h3>
+            <p className="mt-2">This website is created by naiplawan</p>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold">Legal</h3>
+            <p className="mt-2">© Copyright 2023 | naiplawan</p>
+          </div>
         </div>
       </div>
-
-      <div className="centerFooterBox text-sm">
-        © Copyright 2023 | naiplawan
-      </div>
-
-      <div className="leftFooterBox flex flex-row justify-between">
-        <img src="/icons8-pacman-50.png" alt="Pacman" className="w-6 h-6" />
-      </div>
-
-      
-
-    </div>
+    </footer>
+    </>
   );
 }
 

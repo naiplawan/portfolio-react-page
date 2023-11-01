@@ -2,7 +2,9 @@ import Wave from "react-wavify"
 
 export default function WaveComponent() {
     return (
-        <div style={{ position: 'relative' }}>
+        <>
+        <div className="h-full mt-10">
+        <div className="mt-5" style={{ position: 'relative'}}>
             <Wave fill='#3a4c7a'
                     paused={false}
                     style={{ display: 'flex', position: 'absolute', top: 0, left: 0 }}
@@ -23,5 +25,7 @@ export default function WaveComponent() {
                         opacity: 0.5,
                     }}/>
         </div>
+    </div>
+    </>
     )
 }
