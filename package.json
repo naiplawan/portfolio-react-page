@@ -11,15 +11,21 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
+    "@react-three/drei": "^9.88.9",
+    "@react-three/fiber": "^8.15.9",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "lucide-react": "^0.290.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-random-reveal": "^2.0.0",
     "react-router-dom": "^6.17.0",
     "react-text-transition": "^3.1.0",
+    "react-wavify": "^1.9.0",
     "tailwind-merge": "^2.0.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "three": "^0.158.0",
+    "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
     "@types/node": "^20.8.9",
@@ -27,6 +33,7 @@
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
     "autoprefixer": "^10.4.16",
+    "daisyui": "^3.9.4",
     "eslint": "^8.45.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
