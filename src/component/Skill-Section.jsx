@@ -3,7 +3,7 @@ import SkillBox from './Skill-Box';
 function SkillSection() { 
   return (
     <>
-    <div className="flex flex-row mb-20 mt-10 h-auto">
+    <div className="flex flex-row mb-20 mt-10 h-full">
       {/* Skill 1 */}
 
       <div>
