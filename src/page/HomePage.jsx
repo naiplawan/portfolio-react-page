@@ -7,6 +7,7 @@ import WaveComponent from "@/component/Wave";
 import { FaArrowDown } from 'react-icons/fa';
 import SkillSection from '@/component/Skill-Section.jsx';
 import Contact from '@/component/Contact';
+
 export default function HomePage() {
 
 
@@ -17,11 +18,11 @@ export default function HomePage() {
                 <MoonModel />
                 <ContentSection />
                 <SkillSection />
-                <Contact/>
+                <Contact />
                 <Footer  />
                 <WaveComponent/>
                 <motion.div
-                    className="fixed bottom-12 right-20"
+                    className="fixed bottom-12 right-10"
                     animate={{ y: ["0%", "100%"] }}
                     transition={{ repeat: Infinity, duration: 2 }}
                 >

@@ -57,7 +57,7 @@ export default function Contact() {
         />
         <div className="flex justify-center"> 
         <Button
-          className="mt-4 w-full sm:w-1/2 sm:ml-2 items-center justify-center bg-black text-white rounded-lg h-14 hover:bg-gray-700 transition-all"
+          className="mt-4 w-fukk sm:w-1/2 sm:ml-2 items-center justify-center bg-black text-white text-xl rounded-3xl h-14 hover:bg-gray-700 transition-all"
           type="submit"
           onClick={handleSubmit}
         >

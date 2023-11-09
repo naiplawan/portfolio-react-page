@@ -1,4 +1,3 @@
-import "../styles/ContentSection.css";
 import Typewriter from "typewriter-effect";
 import { RandomReveal } from "react-random-reveal";
 

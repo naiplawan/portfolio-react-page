@@ -9,13 +9,6 @@ function NavBar() {
 
   const [index, setIndex] = useState(0);
 
-  const githubProfileUrl = "https://github.com/naiplawan";
-
-  const handlePortfolioClick = () => {
-    // Navigate to the GitHub profile URL
-    window.location.href = githubProfileUrl;
-  };
-
   useEffect(() => {
     const intervalId = setInterval(
       () => setIndex((index) => index + 1),
@@ -28,7 +21,7 @@ function NavBar() {
     <>
       <nav className="flex flex-row justify-between  items-center p-5">
         {/* Right Box */}
-        <div className="text-3xl">
+        <div className="text-3xl" onClick={() => navigate("/")}>
           <TextTransition springConfig={presets.wobbly}>
             {TEXTS[index % TEXTS.length]}
           </TextTransition>
@@ -48,7 +41,7 @@ function NavBar() {
 
           <motion.div
             className="p-4 transition duration-300 hover:bg-white hover:text-black hover:delay-200"
-            onClick={handlePortfolioClick}
+            onClick={() => navigate("/portfolio")}
             whileHover={{ scale: 1.2 }}
             onHoverStart={(e) => {}}
             onHoverEnd={(e) => {}}
@@ -56,10 +49,12 @@ function NavBar() {
             Portfolio
           </motion.div>
 
-          <motion.div className="p-4 transition duration-300 hover:bg-white hover:text-black hover:delay-200"
-          whileHover={{ scale: 1.2 }}
-          onHoverStart={(e) => {}}
-          onHoverEnd={(e) => {}}>
+          <motion.div
+            className="p-4 transition duration-300 hover:bg-white hover:text-black hover:delay-200"
+            whileHover={{ scale: 1.2 }}
+            onHoverStart={(e) => {}}
+            onHoverEnd={(e) => {}}
+          >
             Contact
           </motion.div>
         </div>
@@ -90,10 +85,10 @@ function NavBar() {
               <a onClick={() => navigate("/about")}>About Me</a>
             </li>
             <li>
-              <a onClick={handlePortfolioClick}>Portfolio</a>
+              <a onClick={() => navigate("/portfolio")}>Portfolio</a>
             </li>
             <li>
-              <a>Contact</a>
+                Contact
             </li>
           </ul>
         </div>
