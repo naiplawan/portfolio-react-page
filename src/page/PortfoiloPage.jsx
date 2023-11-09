@@ -3,6 +3,13 @@ import Typewriter from "typewriter-effect";
 import { motion } from "framer-motion";
 
 function PortfolioPage() {
+
+    const pageTransition = {
+        hidden: { opacity: 0 },
+        show: { opacity: 1, transition: { duration: 0.5 } },
+        exit: { opacity: 0, transition: { duration: 0.5 } }
+      };
+
   const handleDownloadCV = () => {
     const fileURL = "/Rachaphol_Resume.pdf";
     const downloadLink = document.createElement("a");
@@ -16,7 +23,14 @@ function PortfolioPage() {
   return (
     <>
       <NavBar />
+      <motion.div
+    variants={pageTransition}
+    initial="hidden"
+    animate="show"
+    exit="exit"
+  > 
       <div className="flex flex-col items-center m-10">
+
         <Typewriter
           options={{
             strings: ["Portfolio"],
@@ -101,6 +115,7 @@ function PortfolioPage() {
           </button>
         </div>
       </div>
+      </motion.div>
     </>
   );
 }

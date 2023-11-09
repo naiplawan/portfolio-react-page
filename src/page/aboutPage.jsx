@@ -1,6 +1,7 @@
 import Lorem from "@/component/Lorem";
 import NavBar from "@/component/NavBar";
 import Typewriter from "typewriter-effect";
+import { motion } from 'framer-motion';
 
 
 function AboutPage() {
@@ -15,9 +16,26 @@ function AboutPage() {
     document.body.removeChild(downloadLink);
   };
 
+  const pageTransition = {
+    in: {
+      opacity: 1,
+      x: 0,
+    },
+    out: {
+      opacity: 0,
+      x: "-100vw",
+    }
+  };
+
   return (
     <>
     <NavBar/>
+    <motion.div
+  initial="out"
+  animate="in"
+  exit="out"
+  variants={pageTransition}
+>
     <div className="flex flex-col items-center m-10"> 
     <Typewriter
           options={{
@@ -51,6 +69,7 @@ function AboutPage() {
 
     </div>
     </div>
+    </motion.div>
     </>
   )
 }
