@@ -3,7 +3,7 @@ import SkillBox from './Skill-Box';
 function SkillSection() { 
   return (
     <>
-    <div className="flex flex-row mb-20 mt-10 h-full">
+    <div className="flex flex-row mb- mt-10 h-full">
       {/* Skill 1 */}
 
       <div>
@@ -33,8 +33,8 @@ function SkillSection() {
         imageSrc="/Group.svg"
       />
       </div>
-
-      {/* Skill 4 */}
+{/* 
+      Skill 4 */}
       <div>
       <SkillBox
         title="Growth Mindset "

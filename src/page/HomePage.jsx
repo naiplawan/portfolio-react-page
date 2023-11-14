@@ -5,7 +5,6 @@ import ContentSection from "../component/Content-Section";
 import Footer from "../component/Footer";
 import WaveComponent from "@/component/Wave";
 import { FaArrowDown } from 'react-icons/fa';
-import SkillSection from '@/component/Skill-Section.jsx';
 import Contact from '@/component/Contact';
 
 export default function HomePage() {
@@ -17,7 +16,6 @@ export default function HomePage() {
                 <NavBar />
                 <MoonModel />
                 <ContentSection />
-                <SkillSection />
                 <Contact />
                 <Footer  />
                 <WaveComponent/>

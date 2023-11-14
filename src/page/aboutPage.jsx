@@ -1,7 +1,8 @@
-import Lorem from "@/component/Lorem";
 import NavBar from "@/component/NavBar";
+import AboutMe from "@/component/AboutMe";
 import Typewriter from "typewriter-effect";
 import { motion } from 'framer-motion';
+import SkillSection from '@/component/Skill-Section.jsx';
 
 
 function AboutPage() {
@@ -53,8 +54,10 @@ function AboutPage() {
         />
     <div>
       <div> 
-        <Lorem/>
+        <AboutMe/>
       </div>
+
+      <SkillSection />
 
       <div className="flex flex-col items-center">
         <div className="text-xl p-2"> Follow me </div>
