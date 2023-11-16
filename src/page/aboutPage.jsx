@@ -2,7 +2,6 @@ import NavBar from "@/component/NavBar";
 import AboutMe from "@/component/AboutMe";
 import Typewriter from "typewriter-effect";
 import { motion } from 'framer-motion';
-import SkillSection from '@/component/Skill-Section.jsx';
 
 
 function AboutPage() {
