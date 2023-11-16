@@ -1,23 +1,12 @@
 import NavBar from "@/component/NavBar";
 import Typewriter from "typewriter-effect";
 import { motion } from "framer-motion";
-import GitHub from "@/public/icons8-github.svg";
 
 function PortfolioPage() {
   const pageTransition = {
     hidden: { opacity: 0 },
     show: { opacity: 1, transition: { duration: 0.5 } },
     exit: { opacity: 0, transition: { duration: 0.5 } },
-  };
-
-  const handleDownloadCV = () => {
-    const fileURL = "/Rachaphol_Resume.pdf";
-    const downloadLink = document.createElement("a");
-    downloadLink.href = fileURL;
-    downloadLink.download = "Rachaphol_Resume.pdf";
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-    document.body.removeChild(downloadLink);
   };
 
   return (
@@ -45,9 +34,9 @@ function PortfolioPage() {
             className="text-10xl m-4 w-full"
           />
 
-          <div className="m-10 flex flex-col w-full p-5">
+          <div className="m-10 flex flex-col w-3/4 p-5 justify-center items-center">
             <motion.div
-              className="card w-50 bg-base-100 shadow-xl mb-10"
+              className="card w-3/4 bg-base-100 shadow-xl mb-10 p-10"
               whileHover={{
                 scale: 1.1,
                 transition: { duration: 0.5 },
@@ -61,8 +50,8 @@ function PortfolioPage() {
               }
             >
               <div className="card-body">
-                <h2 className="card-title">Home Services</h2>
-                <p>
+                <div className="text-2xl font-bold">Home Services</div>
+                <p className="mb-5">
                   Web App that revolutionizes on-demand household services. With
                   Home Services, you have the power to select the services you
                   need, whether it&apos;s installing an air conditioner or
@@ -77,17 +66,17 @@ function PortfolioPage() {
                     width={500}
                   />
                 </figure>
-                <div className="flex flex-col justify-center">
-                  <div>React.js</div>
-                  <div>Node.js</div>
-                  <div>Express</div>
-                  <div>MongoDB</div>
-                </div>
               </div>
+              <div className="flex flex-row justify-between p-4 ">
+                  <div className="badge p-4 badge-lg bg-amber-300 text-white">React.js</div>
+                  <div className="badge p-4 badge-lg bg-slate-300 text-white" >Node.js</div>
+                  <div className="badge p-4 badge-lg bg-green-300 text-white">Express</div>
+                  <div className="badge p-4 badge-lg bg-blue-300 text-white" >MongoDB</div>
+                </div>
             </motion.div>
 
             <motion.div
-              className="card w-50 bg-base-100 shadow-xl mb-10"
+              className="card w-3/4 bg-base-100 shadow-xl mb-10 p-10"
               whileHover={{
                 scale: 1.1,
                 transition: { duration: 0.5 },
@@ -98,8 +87,8 @@ function PortfolioPage() {
               }
             >
               <div className="card-body">
-                <h2 className="card-title">Movie App</h2>
-                <p>
+                <div className="text-2xl font-bold">Movie App</div>
+                <p className="mb-5">
                   This is a JavaScript/React project that allows users to search
                   for movies and add them to a cart.
                 </p>
@@ -109,20 +98,19 @@ function PortfolioPage() {
                   <img
                     src="/public/moviecrud.png"
                     alt="movieapp"
-                    width={500}
                     className="mb-5"
                   />
                 </figure>
-                <div className="flex flex-col justify-center">
-                  <div>Next.js</div>
-                  <div>TailwindCSS</div>
-                  <div>Ant Design</div>
-                </div>
               </div>
+              <div className="flex flex-row justify-between p-4 ">
+                  <div className="badge p-4 badge-lg bg-amber-300 text-white">Next.js</div>
+                  <div className="badge p-4 badge-lg bg-slate-300 text-white" >TailwindCSS</div>
+                  <div className="badge p-4 badge-lg bg-green-300 text-white">AntDesign</div>
+                </div>
             </motion.div>
 
             <motion.div
-              className="card w-50 bg-base-100 shadow-xl mb-10"
+              className="card w-3/4 bg-base-100 shadow-xl mb-10"
               whileHover={{
                 scale: 1.1,
                 transition: { duration: 0.5 },
@@ -136,8 +124,8 @@ function PortfolioPage() {
               }
             >
               <div className="card-body">
-                <h2 className="card-title">To-do-List App</h2>
-                <p>
+                <div className="font-bold text-2xl">To-do-List App</div>
+                <p className="mb-5">
                   The project is a web application built using JavaScript,and
                   React. The application allows users to create and manage a
                   to-do list, with features such as adding new to-do items,
@@ -154,13 +142,13 @@ function PortfolioPage() {
                     width={500}
                     className="mb-5"
                   />
-                </figure>
-                <div className="flex flex-col justify-center">
-                  <div>Next.js</div>
-                  <div>TailwindCSS</div>
-                  <div>DaisyUI</div>
-                </div>
+                </figure>     
               </div>
+              <div className="flex flex-row justify-between p-4 ">
+                  <div className="badge p-4 badge-lg bg-amber-300 text-white">Next.js</div>
+                  <div className="badge p-4 badge-lg bg-slate-300 text-white" >TailwindCSS</div>
+                  <div className="badge p-4 badge-lg bg-green-300 text-white">AntDesign</div>
+                </div>
             </motion.div>
           </div>
 

@@ -6,7 +6,7 @@ import { Environment, OrbitControls } from "@react-three/drei";
 export default function MoonModel() {
   return (
     <>
-      <div className="p-10 flex flex-row "> 
+      <div className="flex flex-row "> 
         <Canvas style={{ height: "100vh !important", width:"50vw"}}>
           <ambientLight color={{intensity: 0.5}}/>
           <OrbitControls enableZoom={false}/>

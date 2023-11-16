@@ -53,11 +53,9 @@ function AboutPage() {
           className="text-10xl m-4 w-full"
         />
     <div>
-      <div> 
+      <div > 
         <AboutMe/>
       </div>
-
-      <SkillSection />
 
       <div className="flex flex-col items-center">
         <div className="text-xl p-2"> Follow me </div>
