@@ -1,6 +1,11 @@
 import NavBar from "@/component/NavBar";
 import Typewriter from "typewriter-effect";
 import { motion } from "framer-motion";
+import todolist from '../assets/todolist.png';
+import moviecrud from '../assets/moviecrud.png';
+import homeservice from '../assets/homeservice.png';
+import github from '../assets/icons8-github.svg';
+import contribution from '../assets/contributions.png';
 
 function PortfolioPage() {
   const pageTransition = {
@@ -61,7 +66,7 @@ function PortfolioPage() {
               <div className="w-full flex flex-row justify-evenly">
                 <figure>
                   <img
-                    src="src/assets/homeservice.png"
+                    src={homeservice}
                     alt="homeservice"
                     width={500}
                   />
@@ -96,7 +101,7 @@ function PortfolioPage() {
               <div className="w-full flex flex-row justify-evenly">
                 <figure>
                   <img
-                    src="src/assets/moviecrud.png"
+                    src={moviecrud}
                     alt="movieapp"
                     className="mb-5"
                   />
@@ -137,7 +142,7 @@ function PortfolioPage() {
               <div className="w-full flex flex-row justify-evenly">
                 <figure>
                   <img
-                    src="src/assets/todolist.png"
+                    src={todolist}
                     alt="todolist"
                     width={500}
                     className="mb-5"
@@ -164,13 +169,13 @@ function PortfolioPage() {
             My GitHub
             <div className="flex flex-row">
               <img
-                src="src/assets/icons8-github.svg"
+                src={github}
                 alt="github"
                 className="m-10"
                 width={100}
               />
               <img
-                src="src/assets/contributions.png"
+                src={contribution}
                 alt="contribution"
                 width={500}
                 className="m-10"
