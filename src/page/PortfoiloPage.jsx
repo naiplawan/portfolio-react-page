@@ -61,7 +61,7 @@ function PortfolioPage() {
               <div className="w-full flex flex-row justify-evenly">
                 <figure>
                   <img
-                    src="/homeservice.png"
+                    src="src/assets/homeservice.png"
                     alt="homeservice"
                     width={500}
                   />
@@ -96,7 +96,7 @@ function PortfolioPage() {
               <div className="w-full flex flex-row justify-evenly">
                 <figure>
                   <img
-                    src="/moviecrud.png"
+                    src="src/assets/moviecrud.png"
                     alt="movieapp"
                     className="mb-5"
                   />
@@ -137,7 +137,7 @@ function PortfolioPage() {
               <div className="w-full flex flex-row justify-evenly">
                 <figure>
                   <img
-                    src="/todolist.png"
+                    src="src/assets/todolist.png"
                     alt="todolist"
                     width={500}
                     className="mb-5"
@@ -164,13 +164,13 @@ function PortfolioPage() {
             My GitHub
             <div className="flex flex-row">
               <img
-                src="/icons8-github.svg"
+                src="src/assets/icons8-github.svg"
                 alt="github"
                 className="m-10"
                 width={100}
               />
               <img
-                src="/contributions.png"
+                src="src/assets/contributions.png"
                 alt="contribution"
                 width={500}
                 className="m-10"
