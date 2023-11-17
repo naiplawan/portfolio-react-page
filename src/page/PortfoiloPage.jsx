@@ -90,7 +90,7 @@ function PortfolioPage() {
               }}
               onClick={() =>
                 window.open(
-                  "https://to-do-list-next-js-roan.vercel.app/",
+                  "https://movie-crud-next.vercel.app//",
                   "_blank"
                 )
               }
