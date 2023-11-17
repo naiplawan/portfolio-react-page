@@ -5,6 +5,7 @@ import todolist from '../assets/todolist.png';
 import moviecrud from '../assets/moviecrud.png';
 import homeservice from '../assets/homeservice.png';
 import marvelapp from '../assets/marvelapp.png';
+import mobileapp from '../assets/mobileapp.png';
 import github from '../assets/icons8-github.svg';
 import contribution from '../assets/contributions.png';
 
@@ -191,6 +192,42 @@ function PortfolioPage() {
                   <div className="badge p-4 badge-lg bg-amber-300 text-white">React.js</div>
                   <div className="badge p-4 badge-lg bg-blue-300 text-white" >TypeScript</div>
                   <div className="badge p-4 badge-lg bg-green-300 text-white">AntDesign</div>
+                </div>
+            </motion.div>
+
+            <motion.div
+              className="card w-3/4 bg-base-100 shadow-xl mb-10"
+              whileHover={{
+                scale: 1.1,
+                transition: { duration: 0.5 },
+                boxShadow: "0px 0px 8px rgb(255,255,255)",
+              }}
+              onClick={() =>
+                window.open(
+                  "https://github.com/naiplawan/My-Book-List-React-Native/",
+                  "_blank"
+                )
+              }
+            >
+              <div className="card-body">
+                <div className="font-bold text-2xl">BookList Mobile App</div>
+                <p className="mb-5">
+                Welcome to the My Book List - React Native repository! This mobile application is designed to help book enthusiasts keep track of their reading journey. Built with React Native, it offers a user-friendly experience for organizing your literary adventures.
+                </p>
+              </div>
+              <div className="w-full flex flex-row justify-evenly">
+                <figure className="mb-5">
+                  <img
+                    src={mobileapp}
+                    alt="mobileapp"
+                    width="100%"
+                  />
+                </figure>     
+              </div>
+              <div className="flex flex-row justify-between p-4 ">
+                  <div className="badge p-4 badge-lg bg-amber-300 text-white">ReactNative</div>
+                  <div className="badge p-4 badge-lg bg-blue-300 text-white" >JavaScript</div>
+                  <div className="badge p-4 badge-lg bg-blue-900 text-white">Expo</div>
                 </div>
             </motion.div>
           </div>
