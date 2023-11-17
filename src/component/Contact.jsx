@@ -25,7 +25,7 @@ export default function Contact() {
 
   return (
     <>
-    <div className="flex flex-col m-10 "> 
+    <div className="flex flex-col m-10 pr-20 pl-20"> 
     <div className="text-gray-700 mt-1 dark:text-white-80 text-center">
         Please contact me directly at{" "}
         <a className="underline" href="mailto:example@gmail.com">
@@ -34,7 +34,7 @@ export default function Contact() {
         or through this form.
       </div>
     
-      <form ref={form} className="mt-5 flex flex-col dark:text-black">
+      <form ref={form} className="mt-5 flex flex-col dark:text-black ">
 
         <input
           className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"

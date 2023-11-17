@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import todolist from '../assets/todolist.png';
 import moviecrud from '../assets/moviecrud.png';
 import homeservice from '../assets/homeservice.png';
+import marvelapp from '../assets/marvelapp.png';
 import github from '../assets/icons8-github.svg';
 import contribution from '../assets/contributions.png';
 
@@ -64,53 +65,55 @@ function PortfolioPage() {
                 </p>
               </div>
               <div className="w-full flex flex-row justify-evenly">
-                <figure>
+                <figure className="mb-5">
                   <img
                     src={homeservice}
                     alt="homeservice"
-                    width={500}
+                    width="100%"
                   />
                 </figure>
               </div>
-              <div className="flex flex-row justify-between p-4 ">
+              <div className="flex flex-row justify-between w-full h-full">
                   <div className="badge p-4 badge-lg bg-amber-300 text-white">React.js</div>
                   <div className="badge p-4 badge-lg bg-slate-300 text-white" >Node.js</div>
-                  <div className="badge p-4 badge-lg bg-green-300 text-white">Express</div>
+                  <div className="badge p-4 badge-lg bg-green-300 text-white ">Express</div>
                   <div className="badge p-4 badge-lg bg-blue-300 text-white" >MongoDB</div>
                 </div>
             </motion.div>
 
             <motion.div
-              className="card w-3/4 bg-base-100 shadow-xl mb-10 p-10"
+              className="card w-3/4 bg-base-100 shadow-xl mb-10"
               whileHover={{
                 scale: 1.1,
                 transition: { duration: 0.5 },
                 boxShadow: "0px 0px 8px rgb(255,255,255)",
               }}
               onClick={() =>
-                window.open("https://movie-crud-next.vercel.app/", "_blank")
+                window.open(
+                  "https://to-do-list-next-js-roan.vercel.app/",
+                  "_blank"
+                )
               }
             >
               <div className="card-body">
-                <div className="text-2xl font-bold">Movie App</div>
+                <div className="font-bold text-2xl">Movie App</div>
                 <p className="mb-5">
-                  This is a JavaScript/React project that allows users to search
-                  for movies and add them to a cart.
+                This is a JavaScript/React project that allows users to search for movies and add them to a cart.
                 </p>
               </div>
               <div className="w-full flex flex-row justify-evenly">
-                <figure>
+                <figure className="mb-5">
                   <img
                     src={moviecrud}
-                    alt="movieapp"
-                    className="mb-5"
+                    alt="moviecrud"
+                    width="100%"
                   />
-                </figure>
+                </figure>     
               </div>
-              <div className="flex flex-row justify-between p-4 ">
-                  <div className="badge p-4 badge-lg bg-amber-300 text-white">Next.js</div>
-                  <div className="badge p-4 badge-lg bg-slate-300 text-white" >TailwindCSS</div>
-                  <div className="badge p-4 badge-lg bg-green-300 text-white">AntDesign</div>
+              <div className="flex flex-row justify-between p-4">
+              <div className="badge p-4 badge-lg bg-black text-white ">Next.js</div>
+                  <div className="badge p-4 badge-lg bg-slate-300 text-white " >TailwindCSS</div>
+                  <div className="badge p-4 badge-lg bg-green-300 text-white ">AntDesign</div>
                 </div>
             </motion.div>
 
@@ -140,18 +143,53 @@ function PortfolioPage() {
                 </p>
               </div>
               <div className="w-full flex flex-row justify-evenly">
-                <figure>
+                <figure className="mb-5">
                   <img
                     src={todolist}
                     alt="todolist"
-                    width={500}
-                    className="mb-5"
+                    width="100%"
+                  />
+                </figure>     
+              </div>
+              <div className="flex flex-row justify-between p-4">
+                  <div className="badge p-4 badge-lg bg-black text-white">Next.js</div>
+                  <div className="badge p-4 badge-lg bg-slate-300 text-white" >TailwindCSS</div>
+                  <div className="badge p-4 badge-lg bg-green-300 text-white">AntDesign</div>
+                </div>
+            </motion.div>
+
+            <motion.div
+              className="card w-3/4 bg-base-100 shadow-xl mb-10"
+              whileHover={{
+                scale: 1.1,
+                transition: { duration: 0.5 },
+                boxShadow: "0px 0px 8px rgb(255,255,255)",
+              }}
+              onClick={() =>
+                window.open(
+                  "https://marvel-ts-app.vercel.app/",
+                  "_blank"
+                )
+              }
+            >
+              <div className="card-body">
+                <div className="font-bold text-2xl">Marvel App</div>
+                <p className="mb-5">
+                This is a web application that allows users to explore the Marvel Universe using TypeScript, React, and the Marvel API. It provides information about characters, comics, and series from the Marvel Universe.
+                </p>
+              </div>
+              <div className="w-full flex flex-row justify-evenly">
+                <figure className="mb-5">
+                  <img
+                    src={marvelapp}
+                    alt="marvelapp"
+                    width="100%"
                   />
                 </figure>     
               </div>
               <div className="flex flex-row justify-between p-4 ">
-                  <div className="badge p-4 badge-lg bg-amber-300 text-white">Next.js</div>
-                  <div className="badge p-4 badge-lg bg-slate-300 text-white" >TailwindCSS</div>
+                  <div className="badge p-4 badge-lg bg-amber-300 text-white">React.js</div>
+                  <div className="badge p-4 badge-lg bg-blue-300 text-white" >TypeScript</div>
                   <div className="badge p-4 badge-lg bg-green-300 text-white">AntDesign</div>
                 </div>
             </motion.div>
