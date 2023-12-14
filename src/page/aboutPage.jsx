@@ -58,13 +58,16 @@ function AboutPage() {
 
       <div className="flex flex-col items-center">
         <div className="text-xl p-2"> Follow me </div>
-        <div className="m-4"></div>
-        <img src="/socialMedia.svg" alt="socialMedia" />
+        <div className="m-4 flex flex-row p-3 justify-evenly border-lg bg-slate-500 card w-96  shadow-xl ">  
+        <img src="src/assets/Facebook.svg" width={50} alt="Facebook" />
+        <img src="src/assets/LinkedIn.svg" width={50} alt="LinkedIn" />
+        <img src="src/assets/GitHub.svg" width={50} alt="GitHub" /></div>
+      
       </div>
 
       <div className="p-5 flex flex-row justify-center ">
-          <button className="btn w-50 m-5 rounded-full" >Send Request</button>
-          <button className="btn w-50  m-5 rounded-full" onClick={handleDownloadCV}>Download CV</button>
+    
+          <button className="btn-wide m-5 p-5 rounded-full text-xl bg-teal-600" onClick={handleDownloadCV}>Download CV</button>
         </div>
 
     </div>

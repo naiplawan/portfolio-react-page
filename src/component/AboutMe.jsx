@@ -1,7 +1,7 @@
 export default function AboutMe() {
   return (
     <>
-      <div className="flex flex-col items-center m-10 text-start p-5">
+      <div className="flex flex-col items-center m-10 text-start p-5 text-xl">
         <div>    I am a freelance photographer with 6 years of experience, specializing
         in capturing beautiful moments and producing high-quality content. As a
         video creator intern at Glazziq Co., Ltd., I developed and produced

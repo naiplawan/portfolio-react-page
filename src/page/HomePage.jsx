@@ -5,7 +5,6 @@ import ContentSection from "../component/Content-Section";
 import Footer from "../component/Footer";
 import WaveComponent from "@/component/Wave";
 import { FaArrowDown } from 'react-icons/fa';
-import Contact from '@/component/Contact';
 
 export default function HomePage() {
 
@@ -16,7 +15,6 @@ export default function HomePage() {
                 <NavBar />
                 <MoonModel />
                 <ContentSection />
-                <Contact />
                 <Footer  />
                 <WaveComponent/>
                 <motion.div

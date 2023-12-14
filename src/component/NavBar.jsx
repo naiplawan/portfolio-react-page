@@ -28,9 +28,9 @@ function NavBar() {
         </div>
 
         {/* Left Box */}
-        <div className="flex flex-row hidden md:inline-flex ">
+        <div className="flex-row hidden md:inline-flex ">
           <motion.div
-            className="p-4 transition duration-300 hover:bg-white hover:text-black hover:delay-200"
+            className="p-4 transition duration-300 hover:bg-white hover:text-black hover:delay-200 text-xl"
             onClick={() => navigate("/about")}
             whileHover={{ scale: 1.2 }}
             onHoverStart={(e) => {}}
@@ -40,7 +40,7 @@ function NavBar() {
           </motion.div>
 
           <motion.div
-            className="p-4 transition duration-300 hover:bg-white hover:text-black hover:delay-200"
+            className="p-4 transition duration-300 hover:bg-white hover:text-black hover:delay-200 text-xl"
             onClick={() => navigate("/portfolio")}
             whileHover={{ scale: 1.2 }}
             onHoverStart={(e) => {}}
@@ -50,7 +50,8 @@ function NavBar() {
           </motion.div>
 
           <motion.div
-            className="p-4 transition duration-300 hover:bg-white hover:text-black hover:delay-200"
+            className="p-4 transition duration-300 hover:bg-white hover:text-black hover:delay-200 text-xl"
+            onClick={() => navigate("/contact")}
             whileHover={{ scale: 1.2 }}
             onHoverStart={(e) => {}}
             onHoverEnd={(e) => {}}
@@ -60,7 +61,7 @@ function NavBar() {
         </div>
 
         <div className="dropdown md:hidden p-5">
-          <label tabIndex={0} className="btn btn-ghost btn-circle">
+          <label tabIndex={0} className="btn btn-ghost btn-circle text-xl">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 "
@@ -88,7 +89,7 @@ function NavBar() {
               <a onClick={() => navigate("/portfolio")}>Portfolio</a>
             </li>
             <li>
-                Contact
+              <a onClick={() => navigate("/contact")}>Contact</a>
             </li>
           </ul>
         </div>
