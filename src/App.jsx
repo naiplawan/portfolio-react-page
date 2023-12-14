@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./page/HomePage.jsx";
 import ErrorPage from "./page/ErrorPage.jsx";
-import AboutPage from "./page/AboutPage.jsx";
+import AboutPage from "./page/aboutPage.jsx";
 import PortfolioPage from "./page/PortfoiloPage.jsx";
 import ContactPage from "./page/ContactPage.jsx";
 
