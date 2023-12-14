@@ -1,5 +1,5 @@
 
-# React Resume Page
+# Portfolio Page
 
 Welcome to the React Resume Page, a dynamic and interactive web page to showcase your professional skills, experience, and qualifications in a visually appealing format. This application leverages React to create a modern, customizable, and responsive online resume.
 
