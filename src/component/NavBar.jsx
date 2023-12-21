@@ -19,7 +19,7 @@ function NavBar() {
 
   return (
     <>
-      <nav className="flex flex-row justify-between  items-center p-5">
+      <nav className="flex flex-row justify-between  items-center p-5  rounded-b-2xl mb-10">
         {/* Right Box */}
         <div className="text-3xl" onClick={() => navigate("/")}>
           <TextTransition springConfig={presets.wobbly}>
@@ -30,7 +30,7 @@ function NavBar() {
         {/* Left Box */}
         <div className="flex-row hidden md:inline-flex ">
           <motion.div
-            className="p-4 transition duration-300 hover:bg-white hover:text-black hover:delay-200 text-xl"
+            className="p-4 transition duration-200 hover:bg-white hover:text-black hover:rounded-3xl hover:delay-200 text-xl"
             onClick={() => navigate("/about")}
             whileHover={{ scale: 1.2 }}
             onHoverStart={(e) => {}}
@@ -40,7 +40,7 @@ function NavBar() {
           </motion.div>
 
           <motion.div
-            className="p-4 transition duration-300 hover:bg-white hover:text-black hover:delay-200 text-xl"
+            className="p-4 transition duration-200 hover:bg-white hover:text-black hover:rounded-3xl hover:delay-200 text-xl"
             onClick={() => navigate("/portfolio")}
             whileHover={{ scale: 1.2 }}
             onHoverStart={(e) => {}}
@@ -50,7 +50,7 @@ function NavBar() {
           </motion.div>
 
           <motion.div
-            className="p-4 transition duration-300 hover:bg-white hover:text-black hover:delay-200 text-xl"
+            className="p-4 transition duration-200 hover:bg-white hover:text-black hover:rounded-3xl hover:delay-200 text-xl"
             onClick={() => navigate("/contact")}
             whileHover={{ scale: 1.2 }}
             onHoverStart={(e) => {}}

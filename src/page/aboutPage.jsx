@@ -60,11 +60,17 @@ function AboutPage() {
       </div>
 
       <div className="flex flex-col items-center">
-        <div className="text-xl p-2"> Follow me </div>
+        <div className="text-3xl p-2 "> Follow me </div>
         <div className="m-4 flex flex-row p-3 justify-evenly border-lg bg-slate-500 card w-96  shadow-xl ">  
-        <img src={FacebookIcon} width={50} alt="Facebook" />
+        <img src={FacebookIcon} 
+        width={50} 
+        alt="Facebook" 
+        onClick={() => window.open("https://github.com/naiplawan")}/>
         <img src={LinkendinIcon} width={50} alt="LinkedIn" />
-        <img src={GitHubIcon} width={50} alt="GitHub" /></div>
+        <img src={GitHubIcon} 
+        width={50} 
+        alt="GitHub" 
+        onClick={() => window.open("https://github.com/naiplawan")}/></div>
       
       </div>
 

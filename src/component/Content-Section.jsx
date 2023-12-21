@@ -6,7 +6,7 @@ function ContentSection() {
   return (
     <div
       className="flex flex-row
-    justify-center items-center mt-5 p-5 bg-slate-900 m-5 rounded-3xl"
+    justify-center items-center mt-10 p-5 bg-slate-900 m-5 rounded-3xl"
     >
       {/* Left Box */}
       <div className="flex flex-col justify-evenly mr-20 p-5 ">
