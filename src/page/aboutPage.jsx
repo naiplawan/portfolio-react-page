@@ -65,8 +65,9 @@ function AboutPage() {
         <img src={FacebookIcon} 
         width={50} 
         alt="Facebook" 
-        onClick={() => window.open("https://github.com/naiplawan")}/>
-        <img src={LinkendinIcon} width={50} alt="LinkedIn" />
+        onClick={() => window.open("https://www.facebook.com/mos.jrpt")}/>
+        <img src={LinkendinIcon} width={50} alt="LinkedIn" 
+        onClick={() => window.open("https://www.linkedin.com/in/rachaphol-plookaom")}/>
         <img src={GitHubIcon} 
         width={50} 
         alt="GitHub" 
