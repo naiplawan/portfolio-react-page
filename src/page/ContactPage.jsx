@@ -27,7 +27,7 @@ export default function ContactPage() {
   return (
     <>
      <NavBar/>
-    <div className="flex flex-col m-10 pr-20 pl-20"> 
+    <div className="flex flex-col justify-center m-10 pr-20 pl-20 h-screen "> 
     <div className="text-gray-700 mt-1 dark:text-white-80 text-center">
         Please contact me directly at{" "}
         <a className="underline" href="mailto:example@gmail.com">

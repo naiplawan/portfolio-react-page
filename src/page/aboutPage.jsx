@@ -2,11 +2,14 @@ import NavBar from "@/component/NavBar";
 import AboutMe from "@/component/AboutMe";
 import Typewriter from "typewriter-effect";
 import { motion } from 'framer-motion';
+import FacebookIcon from "../assets/Facebook.svg"
+import LinkendinIcon from "../assets/LinkedIn.svg"
+import GitHubIcon from "../assets/GitHub.svg"
 
 
 function AboutPage() {
 
-  const handleDownloadCV = () => {
+  const handleDownloadResume = () => {
     const fileURL = "/Rachaphol_Resume.pdf";
     const downloadLink = document.createElement("a");
     downloadLink.href = fileURL;
@@ -59,15 +62,15 @@ function AboutPage() {
       <div className="flex flex-col items-center">
         <div className="text-xl p-2"> Follow me </div>
         <div className="m-4 flex flex-row p-3 justify-evenly border-lg bg-slate-500 card w-96  shadow-xl ">  
-        <img src="src/assets/Facebook.svg" width={50} alt="Facebook" />
-        <img src="src/assets/LinkedIn.svg" width={50} alt="LinkedIn" />
-        <img src="src/assets/GitHub.svg" width={50} alt="GitHub" /></div>
+        <img src={FacebookIcon} width={50} alt="Facebook" />
+        <img src={LinkendinIcon} width={50} alt="LinkedIn" />
+        <img src={GitHubIcon} width={50} alt="GitHub" /></div>
       
       </div>
 
       <div className="p-5 flex flex-row justify-center ">
     
-          <button className="btn-wide m-5 p-5 rounded-full text-xl bg-teal-600" onClick={handleDownloadCV}>Download CV</button>
+          <button className="btn-wide m-5 p-5 rounded-full text-xl bg-teal-600" onClick={handleDownloadResume}>Download Resume</button>
         </div>
 
     </div>
