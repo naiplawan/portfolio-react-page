@@ -2,6 +2,7 @@ import {Button} from "antd";
 import { useState,useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import NavBar from "../component/NavBar";
+import ContactImage from "../assets/8690678_3969584.svg"
 
 export default function ContactPage() {
 
@@ -28,6 +29,11 @@ export default function ContactPage() {
     <>
      <NavBar/>
     <div className="flex flex-col justify-center m-10 pr-20 pl-20 h-screen "> 
+    <div>
+      <div className="flex justify-center">
+        <img src={ContactImage} alt="404 Error" width={500}/>
+      </div>
+    </div>
     <div className="text-gray-700 mt-1 dark:text-white-80 text-center">
         Please contact me directly at{" "}
         <a className="underline" href="mailto:example@gmail.com">
