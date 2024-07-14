@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "./page/HomePage.jsx";
-import ErrorPage from "./page/ErrorPage.jsx";
-import AboutPage from "./page/AboutPage.jsx";
-import PortfolioPage from "./page/PortfolioPage.jsx";
-import ContactPage from "./page/ContactPage.jsx";
+import HomePage from "./page/HomePage";
+import AboutPage from "./page/AboutPage";
+import PortfolioPage from "./page/PortfolioPage";
+import ContactPage from "./page/ContactPage";
+import ErrorPage from "./page/ErrorPage";
 
 function App() {
   return (
