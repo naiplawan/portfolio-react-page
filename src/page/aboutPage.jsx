@@ -7,7 +7,7 @@ import LinkendinIcon from "../assets/LinkedIn.svg"
 import GitHubIcon from "../assets/GitHub.svg"
 
 
-function AboutPage() {
+export default function AboutPage() {
 
   const handleDownloadResume = () => {
     const fileURL = "/Rachaphol_Resume.pdf";
@@ -39,7 +39,7 @@ function AboutPage() {
   exit="out"
   variants={pageTransition}
 >
-    <div className="flex flex-col items-center m-10"> 
+    <div className="flex flex-col items-center m-10">
     <Typewriter
           options={{
             strings: ["About Me"],
@@ -55,28 +55,28 @@ function AboutPage() {
           className="text-10xl m-4 w-full"
         />
     <div>
-      <div > 
+      <div >
         <AboutMe/>
       </div>
 
       <div className="flex flex-col items-center">
         <div className="text-3xl p-2 "> Follow me </div>
-        <div className="m-4 flex flex-row p-3 justify-evenly border-lg bg-slate-500 card w-96  shadow-xl ">  
-        <img src={FacebookIcon} 
-        width={50} 
-        alt="Facebook" 
+        <div className="m-4 flex flex-row p-3 justify-evenly border-lg bg-slate-500 card w-96  shadow-xl ">
+        <img src={FacebookIcon}
+        width={50}
+        alt="Facebook"
         onClick={() => window.open("https://www.facebook.com/mos.jrpt")}/>
-        <img src={LinkendinIcon} width={50} alt="LinkedIn" 
+        <img src={LinkendinIcon} width={50} alt="LinkedIn"
         onClick={() => window.open("https://www.linkedin.com/in/rachaphol-plookaom")}/>
-        <img src={GitHubIcon} 
-        width={50} 
-        alt="GitHub" 
+        <img src={GitHubIcon}
+        width={50}
+        alt="GitHub"
         onClick={() => window.open("https://github.com/naiplawan")}/></div>
-      
+
       </div>
 
       <div className="p-5 flex flex-row justify-center ">
-    
+
           <button className="btn-wide m-5 p-5 rounded-full text-xl bg-teal-600" onClick={handleDownloadResume}>Download Resume</button>
         </div>
 
@@ -87,4 +87,4 @@ function AboutPage() {
   )
 }
 
-export default AboutPage
+
