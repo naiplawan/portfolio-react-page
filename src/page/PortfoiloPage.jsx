@@ -8,12 +8,18 @@ import marvelapp from '../assets/marvelapp.png';
 import mobileapp from '../assets/mobileapp.png';
 import github from '../assets/icons8-github.svg';
 import contribution from '../assets/contributions.png';
+import { FaArrowDown } from 'react-icons/fa';
+import { useRef } from 'react';
 
 function PortfolioPage() {
   const pageTransition = {
     hidden: { opacity: 0 },
     show: { opacity: 1, transition: { duration: 0.5 } },
     exit: { opacity: 0, transition: { duration: 0.5 } },
+  };
+  const githubRef = useRef(null);
+  const scrollToGithub = () => {
+    githubRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -196,6 +202,7 @@ function PortfolioPage() {
             boxShadow: '0px 0px 8px rgb(255,255,255)',
           }}
           onClick={() => window.open('https://github.com/naiplawan')}
+          ref={githubRef}
         >
           My GitHub
           <div className="flex flex-row">
@@ -203,6 +210,15 @@ function PortfolioPage() {
             <img src={contribution} alt="contribution" width={500} className="m-10" />
           </div>
         </motion.div>
+      </motion.div>
+
+      <motion.div
+        className="fixed bottom-12 right-10 z-0 bg-black rounded-3xl p-2 cursor-pointer"
+        animate={{ y: ['0%', '70%'] }}
+        transition={{ repeat: Infinity, duration: 2 }}
+        onClick={scrollToGithub}
+      >
+        <FaArrowDown size={30} />
       </motion.div>
     </>
   );

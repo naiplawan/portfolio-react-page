@@ -1,10 +1,10 @@
-import TextTransition, { presets } from "react-text-transition";
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import TextTransition, { presets } from 'react-text-transition';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 function NavBar() {
-  const TEXTS = ["Learn", "Unlearn", "Relearn", "Repeat"];
+  const TEXTS = ['Learn', 'Unlearn', 'Relearn', 'Repeat'];
   const navigate = useNavigate();
 
   const [index, setIndex] = useState(0);
@@ -19,9 +19,9 @@ function NavBar() {
 
   return (
     <>
-      <nav className="flex flex-row justify-between  items-center p-5  rounded-b-2xl mb-10">
+      <nav className="flex flex-row justify-between  items-center p-5  rounded-b-2xl mb-10 cursor-pointer">
         {/* Right Box */}
-        <div className="text-3xl" onClick={() => navigate("/")}>
+        <div className="text-3xl" onClick={() => navigate('/')}>
           <TextTransition springConfig={presets.wobbly}>
             {TEXTS[index % TEXTS.length]}
           </TextTransition>
@@ -30,9 +30,9 @@ function NavBar() {
         {/* Left Box */}
         <div className="flex-row hidden md:inline-flex ">
           <motion.div
-            className="p-4 transition duration-200 hover:bg-white hover:text-black hover:rounded-3xl hover:delay-200 text-xl"
-            onClick={() => navigate("/about")}
-            whileHover={{ scale: 1.2 }}
+            className="rounded-3xl p-4 transition duration-100 ease-in-out hover:bg-white hover:text-black hover:rounded-3xl hover:delay-100 text-xl cursor-pointer"
+            onClick={() => navigate('/about')}
+            whileHover={{ scale: 1.0 }}
             onHoverStart={(e) => {}}
             onHoverEnd={(e) => {}}
           >
@@ -40,9 +40,9 @@ function NavBar() {
           </motion.div>
 
           <motion.div
-            className="p-4 transition duration-200 hover:bg-white hover:text-black hover:rounded-3xl hover:delay-200 text-xl"
-            onClick={() => navigate("/portfolio")}
-            whileHover={{ scale: 1.2 }}
+            className="rounded-3xl p-4 transition duration-100 ease-in-out hover:bg-white hover:text-black hover:rounded-3xl hover:delay-100 text-xl cursor-pointer"
+            onClick={() => navigate('/portfolio')}
+            whileHover={{ scale: 1.01 }}
             onHoverStart={(e) => {}}
             onHoverEnd={(e) => {}}
           >
@@ -50,9 +50,9 @@ function NavBar() {
           </motion.div>
 
           <motion.div
-            className="p-4 transition duration-200 hover:bg-white hover:text-black hover:rounded-3xl hover:delay-200 text-xl"
-            onClick={() => navigate("/contact")}
-            whileHover={{ scale: 1.2 }}
+            className="rounded-3xl p-4 transition duration-100 ease-in-out hover:bg-white hover:text-black hover:rounded-3xl hover:delay-100 text-xl cursor-pointer"
+            onClick={() => navigate('/contact')}
+            whileHover={{ scale: 1.01 }}
             onHoverStart={(e) => {}}
             onHoverEnd={(e) => {}}
           >
@@ -80,16 +80,16 @@ function NavBar() {
 
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content z-[1] p-1 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content z-[1] p-1 shadow bg-base-100 rounded-box w-52 cursor-pointer"
           >
             <li>
-              <a onClick={() => navigate("/about")}>About Me</a>
+              <a onClick={() => navigate('/about')}>About Me</a>
             </li>
             <li>
-              <a onClick={() => navigate("/portfolio")}>Portfolio</a>
+              <a onClick={() => navigate('/portfolio')}>Portfolio</a>
             </li>
             <li>
-              <a onClick={() => navigate("/contact")}>Contact</a>
+              <a onClick={() => navigate('/contact')}>Contact</a>
             </li>
           </ul>
         </div>

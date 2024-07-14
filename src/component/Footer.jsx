@@ -1,7 +1,9 @@
+import WaveComponent from '@/component/Wave';
+
 function Footer() {
   return (
     <>
-    <footer className="bg-gray-800 p-3 mt-10 text-center text-white  rounded-t-2xl">
+    <footer className=" w-screen h-full selection:p-3 mt-10 text-center text-white  rounded-t-2xl p-1">
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
           <div>
@@ -19,6 +21,8 @@ function Footer() {
         </div>
       </div>
     </footer>
+
+    <WaveComponent />
     </>
   );
 }

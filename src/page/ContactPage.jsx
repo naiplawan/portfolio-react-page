@@ -13,7 +13,7 @@ export default function ContactPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
     emailjs.send('service_3wygx3u', 'template_p6wyyhb', {
       senderEmail,
       message
@@ -28,7 +28,7 @@ export default function ContactPage() {
   return (
     <>
      <NavBar/>
-    <div className="flex flex-col justify-center m-10 pr-20 pl-20 h-screen "> 
+    <div className="flex flex-col justify-center m-10 pr-20 pl-20 h-screen ">
     <div>
       <div className="flex justify-center">
         <img src={ContactImage} alt="404 Error" width={500}/>
@@ -37,11 +37,11 @@ export default function ContactPage() {
     <div className="text-gray-700 mt-1 dark:text-white-80 text-center">
         Please contact me directly at{" "}
         <a className="underline" href="mailto:example@gmail.com">
-          example@gmail.com
+          rachaphol.plo@gmail.com
         </a>{" "}
         or through this form.
       </div>
-    
+
       <form ref={form} className="mt-5 flex flex-col dark:text-black ">
 
         <input
@@ -63,7 +63,7 @@ export default function ContactPage() {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
-        <div className="flex justify-center"> 
+        <div className="flex justify-center">
         <Button
           className="mt-4 w-fukk sm:w-1/2 sm:ml-2 items-center justify-center bg-black text-white text-xl rounded-3xl h-14 hover:bg-gray-700 transition-all"
           type="submit"
