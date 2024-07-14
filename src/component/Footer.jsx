@@ -14,7 +14,7 @@ function Footer() {
           </div>
           <div>
             <h3 className="text-lg font-semibold">Legal</h3>
-            <p className="mt-2">© Copyright 2023 | naiplawan</p>
+            <p className="mt-2">© Copyright 2024 | naiplawan</p>
           </div>
         </div>
       </div>
