@@ -9,6 +9,7 @@ import mobileapp from '../assets/mobileapp.png';
 import github from '../assets/icons8-github.svg';
 import contribution from '../assets/contributions.png';
 import { FaArrowDown } from 'react-icons/fa';
+import GitHubCalendar from 'react-github-calendar';
 import { useRef } from 'react';
 
 function PortfolioPage() {
@@ -71,10 +72,10 @@ function PortfolioPage() {
               </figure>
             </div>
             <div className="flex flex-wrap gap-2 justify-around">
-              <div className="badge p-2 md:p-4 mt-2 badge-lg bg-amber-300 text-white">React.js</div>
-              <div className="badge p-2 md:p-4 mt-2 badge-lg bg-slate-300 text-white">Node.js</div>
-              <div className="badge p-2 md:p-4 mt-2 badge-lg bg-green-300 text-white">Express</div>
-              <div className="badge p-2 md:p-4 mt-2 badge-lg bg-blue-300 text-white">MongoDB</div>
+              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-amber-300 text-white text-lg">React.js</div>
+              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-slate-300 text-white text-lg">Node.js</div>
+              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-green-300 text-white text-lg">Express</div>
+              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-blue-300 text-white text-lg">MongoDB</div>
             </div>
           </motion.div>
 
@@ -99,9 +100,9 @@ function PortfolioPage() {
               </figure>
             </div>
             <div className="flex flex-wrap gap-2 justify-around">
-              <div className="badge p-2 md:p-4 mt-2 badge-lg bg-black text-white">Next.js</div>
-              <div className="badge p-2 md:p-4 mt-2 badge-lg bg-slate-300 text-white">TailwindCSS</div>
-              <div className="badge p-2 md:p-4 mt-2 badge-lg bg-green-300 text-white">AntDesign</div>
+              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-black text-white text-lg">Next.js</div>
+              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-slate-300 text-white text-lg">TailwindCSS</div>
+              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-green-300 text-white text-lg">AntDesign</div>
             </div>
           </motion.div>
 
@@ -119,8 +120,8 @@ function PortfolioPage() {
               <p className="mb-5">
                 The project is a web application built using JavaScript,and React. The application allows users to
                 create and manage a to-do list, with features such as adding new to-do items, editing existing items,
-                deleting items, and marking items as completed. The application uses the Ant Design library for
-                styling and the Next.js framework for server-side rendering.
+                deleting items, and marking items as completed. The application uses the Ant Design library for styling
+                and the Next.js framework for server-side rendering.
               </p>
             </div>
             <div className="w-full flex flex-row justify-evenly">
@@ -129,9 +130,9 @@ function PortfolioPage() {
               </figure>
             </div>
             <div className="flex flex-wrap gap-2 justify-around">
-              <div className="badge p-2 md:p-4 mt-2 badge-lg bg-black text-white">Next.js</div>
-              <div className="badge p-2 md:p-4 mt-2 badge-lg bg-slate-300 text-white">TailwindCSS</div>
-              <div className="badge p-2 md:p-4 mt-2 badge-lg bg-green-300 text-white">AntDesign</div>
+              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-black text-white text-lg">Next.js</div>
+              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-slate-300 text-white text-lg">TailwindCSS</div>
+              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-green-300 text-white text-lg">AntDesign</div>
             </div>
           </motion.div>
 
@@ -147,9 +148,8 @@ function PortfolioPage() {
             <div className="card-body">
               <div className="font-bold text-2xl">Marvel App</div>
               <p className="mb-5 text-base sm:text-lg">
-                This is a web application that allows users to explore the Marvel Universe using TypeScript, React,
-                and the Marvel API. It provides information about characters, comics, and series from the Marvel
-                Universe.
+                This is a web application that allows users to explore the Marvel Universe using TypeScript, React, and
+                the Marvel API. It provides information about characters, comics, and series from the Marvel Universe.
               </p>
             </div>
             <div className="w-full flex flex-row justify-evenly">
@@ -158,9 +158,9 @@ function PortfolioPage() {
               </figure>
             </div>
             <div className="flex flex-wrap gap-2 justify-around">
-              <div className="badge p-2 md:p-4 mt-2 badge-lg bg-amber-300 text-white">React.js</div>
-              <div className="badge p-2 md:p-4 mt-2 badge-lg bg-blue-300 text-white">TypeScript</div>
-              <div className="badge p-2 md:p-4 mt-2 badge-lg bg-green-300 text-white">AntDesign</div>
+              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-amber-300 text-white text-lg">React.js</div>
+              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-blue-300 text-white text-lg">TypeScript</div>
+              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-green-300 text-white text-lg">AntDesign</div>
             </div>
           </motion.div>
 
@@ -176,9 +176,9 @@ function PortfolioPage() {
             <div className="card-body">
               <div className="font-bold text-2xl">BookList Mobile App</div>
               <p className="mb-5">
-                Welcome to the My Book List - React Native repository! This mobile application is designed to help
-                book enthusiasts keep track of their reading journey. Built with React Native, it offers a
-                user-friendly experience for organizing your literary adventures.
+                Welcome to the My Book List - React Native repository! This mobile application is designed to help book
+                enthusiasts keep track of their reading journey. Built with React Native, it offers a user-friendly
+                experience for organizing your literary adventures.
               </p>
             </div>
             <div className="w-full flex flex-row justify-evenly">
@@ -187,15 +187,15 @@ function PortfolioPage() {
               </figure>
             </div>
             <div className="flex flex-wrap gap-2 justify-around">
-              <div className="badge p-2 md:p-4 mt-2 badge-lg bg-amber-300 text-white">ReactNative</div>
-              <div className="badge p-2 md:p-4 mt-2 badge-lg bg-blue-300 text-white">JavaScript</div>
-              <div className="badge p-2 md:p-4 mt-2 badge-lg bg-blue-900 text-white">Expo</div>
+              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-amber-300 text-white text-lg">ReactNative</div>
+              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-blue-300 text-white text-lg">JavaScript</div>
+              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-blue-900 text-white text-lg">Expo</div>
             </div>
           </motion.div>
         </div>
 
         <motion.div
-          className="card bg-slate-800 shadow-xl mt-4 mr-4 ml-4 flex flex-col items-center pt-5 text-3xl w-full cursor-pointer"
+          className="hidden md:flex card bg-slate-800 shadow-xl mt-4 mr-4 ml-4 flex-col items-center pt-5 text-3xl w-full cursor-pointer"
           whileHover={{
             scale: 1.02,
             transition: { duration: 0.5 },
@@ -205,10 +205,35 @@ function PortfolioPage() {
           ref={githubRef}
         >
           My GitHub
-          <div className="flex flex-row">
+          <div className="flex flex-row mt-5 overflow-x-auto">
             <img src={github} alt="github" className="m-10" width={100} />
-            <img src={contribution} alt="contribution" width={500} className="m-10" />
+            <div className="mr-4 sm:mr-4 md:mr-5 p-2">
+              <GitHubCalendar username="naiplawan" />
+            </div>
           </div>
+        </motion.div>
+
+        <motion.div
+          className="card bg-slate-800 shadow-xl  flex-col items-center w-100 cursor-pointer md:hidden mt-4"
+          whileHover={{
+            scale: 1.01,
+            transition: { duration: 0.5 },
+            boxShadow: '0px 0px 8px rgb(255,255,255)',
+          }}
+          onClick={() => window.open('https://github.com/naiplawan')}
+          ref={githubRef}
+        >
+          <motion.div
+      animate={{ scale: [1, 1.15, 1] }}
+      transition={{
+        duration: 2,
+        ease: "easeInOut",
+        repeat: Infinity,
+        repeatType: "loop"
+      }}
+    >
+      <img src={github} alt="github" className="m-10" width={100} />
+    </motion.div>
         </motion.div>
       </motion.div>
 
