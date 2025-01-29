@@ -72,10 +72,10 @@ function PortfolioPage() {
               </figure>
             </div>
             <div className="flex flex-wrap gap-2 justify-around">
-              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-amber-300 text-white text-lg">React.js</div>
-              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-slate-300 text-white text-lg">Node.js</div>
-              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-green-300 text-white text-lg">Express</div>
-              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-blue-300 text-white text-lg">MongoDB</div>
+              <div className="badge p-4 md:p-4 mt-2 rounded-lg bg-amber-300 text-white text-lg">React.js</div>
+              <div className="badge p-4 md:p-4 mt-2 rounded-lg bg-slate-300 text-white text-lg">Node.js</div>
+              <div className="badge p-4 md:p-4 mt-2 rounded-lg bg-green-300 text-white text-lg">Express</div>
+              <div className="badge p-4 md:p-4 mt-2 rounded-lg bg-blue-300 text-white text-lg">MongoDB</div>
             </div>
           </motion.div>
 
@@ -100,9 +100,9 @@ function PortfolioPage() {
               </figure>
             </div>
             <div className="flex flex-wrap gap-2 justify-around">
-              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-black text-white text-lg">Next.js</div>
-              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-slate-300 text-white text-lg">TailwindCSS</div>
-              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-green-300 text-white text-lg">AntDesign</div>
+              <div className="badge p-4 md:p-4 mt-2 rounded-lg bg-black text-white text-lg">Next.js</div>
+              <div className="badge p-4 md:p-4 mt-2 rounded-lg bg-slate-300 text-white text-lg">TailwindCSS</div>
+              <div className="badge p-4 md:p-4 mt-2 rounded-lg bg-green-300 text-white text-lg">AntDesign</div>
             </div>
           </motion.div>
 
@@ -130,9 +130,9 @@ function PortfolioPage() {
               </figure>
             </div>
             <div className="flex flex-wrap gap-2 justify-around">
-              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-black text-white text-lg">Next.js</div>
-              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-slate-300 text-white text-lg">TailwindCSS</div>
-              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-green-300 text-white text-lg">AntDesign</div>
+              <div className="badge p-4 md:p-4 mt-2 rounded-lg bg-black text-white text-lg">Next.js</div>
+              <div className="badge p-4 md:p-4 mt-2 rounded-lg bg-slate-300 text-white text-lg">TailwindCSS</div>
+              <div className="badge p-4 md:p-4 mt-2 rounded-lg bg-green-300 text-white text-lg">AntDesign</div>
             </div>
           </motion.div>
 
@@ -158,9 +158,9 @@ function PortfolioPage() {
               </figure>
             </div>
             <div className="flex flex-wrap gap-2 justify-around">
-              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-amber-300 text-white text-lg">React.js</div>
-              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-blue-300 text-white text-lg">TypeScript</div>
-              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-green-300 text-white text-lg">AntDesign</div>
+              <div className="badge p-4 md:p-4 mt-2 rounded-lg bg-amber-300 text-white text-lg">React.js</div>
+              <div className="badge p-4 md:p-4 mt-2 rounded-lg bg-blue-300 text-white text-lg">TypeScript</div>
+              <div className="badge p-4 md:p-4 mt-2 rounded-lg bg-green-300 text-white text-lg">AntDesign</div>
             </div>
           </motion.div>
 
@@ -187,9 +187,9 @@ function PortfolioPage() {
               </figure>
             </div>
             <div className="flex flex-wrap gap-2 justify-around">
-              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-amber-300 text-white text-lg">ReactNative</div>
-              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-blue-300 text-white text-lg">JavaScript</div>
-              <div className="badge p-4 md:p-4 mt-2 badge-lg bg-blue-900 text-white text-lg">Expo</div>
+              <div className="badge p-4 md:p-4 mt-2 rounded-lg bg-amber-300 text-white text-lg">ReactNative</div>
+              <div className="badge p-4 md:p-4 mt-2 rounded-lg bg-blue-300 text-white text-lg">JavaScript</div>
+              <div className="badge p-4 md:p-4 mt-2 rounded-lg bg-blue-900 text-white text-lg">Expo</div>
             </div>
           </motion.div>
         </div>
@@ -224,16 +224,16 @@ function PortfolioPage() {
           ref={githubRef}
         >
           <motion.div
-      animate={{ scale: [1, 1.15, 1] }}
-      transition={{
-        duration: 2,
-        ease: "easeInOut",
-        repeat: Infinity,
-        repeatType: "loop"
-      }}
-    >
-      <img src={github} alt="github" className="m-10" width={100} />
-    </motion.div>
+            animate={{ scale: [1, 1.15, 1] }}
+            transition={{
+              duration: 2,
+              ease: 'easeInOut',
+              repeat: Infinity,
+              repeatType: 'loop',
+            }}
+          >
+            <img src={github} alt="github" className="m-10" width={100} />
+          </motion.div>
         </motion.div>
       </motion.div>
 

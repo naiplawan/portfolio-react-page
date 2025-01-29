@@ -15,11 +15,14 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@react-three/drei": "^9.88.9",
     "@react-three/fiber": "^8.15.9",
+    "@tailwindcss/postcss": "^4.0.0",
+    "@tailwindcss/postcss7-compat": "^2.2.17",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.5.0",
     "antd": "^5.10.3",
     "class-variance-authority": "^0.7.0",
-    "clsx": "^2.0.0",
+    "clsx": "^2.1.1",
+    "file-saver": "^2.0.5",
     "framer-motion": "^10.16.4",
     "lucide-react": "^0.290.0",
     "react": "^18.2.0",
@@ -31,6 +34,7 @@
     "react-text-transition": "^3.1.0",
     "react-wavify": "^1.9.0",
     "tailwind-merge": "^2.0.0",
+    "tailwindcss": "^4.0.0",
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.158.0",
     "tsparticles-engine": "^2.12.0",
@@ -48,8 +52,7 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
-    "postcss": "^8.4.31",
-    "tailwindcss": "^3.3.5",
+    "postcss": "^8.5.1",
     "vite": "^4.4.5"
   }
 }

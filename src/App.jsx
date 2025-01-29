@@ -1,9 +1,9 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "./page/HomePage";
-import AboutPage from "./page/AboutPage";
-import PortfolioPage from "./page/PortfolioPage";
-import ContactPage from "./page/ContactPage";
-import ErrorPage from "./page/ErrorPage";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import HomePage from './page/HomePage';
+import AboutPage from './page/AboutPage';
+import PortfolioPage from './page/PortfolioPage';
+import ContactPage from './page/ContactPage';
+import ErrorPage from './page/ErrorPage';
 
 function App() {
   return (
