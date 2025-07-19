@@ -71,7 +71,7 @@ export default function AboutMe() {
             </h2>
             <div className="max-w-4xl mx-auto space-y-6 text-lg leading-relaxed text-gray-600">
               <p>
-                I'm a passionate fullstack developer with expertise in modern web technologies 
+                I&apos;m a passionate fullstack developer with expertise in modern web technologies 
                 and a strong foundation in both frontend and backend development. With over 3 years 
                 of hands-on experience, I specialize in creating scalable web applications and 
                 exploring cutting-edge AI technologies.

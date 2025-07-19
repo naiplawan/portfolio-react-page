@@ -20,5 +20,7 @@ module.exports = {
     'react/prop-types': 'off',
     'no-unused-vars': 'warn',
     'react/no-unknown-property': ['error', { ignore: ['dispose', 'rotation', 'geometry', 'material', 'position'] }],
+    'react/no-unescaped-entities': 'off',
+    '@next/next/no-img-element': 'warn',
   },
 }
