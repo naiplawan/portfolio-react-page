@@ -9,13 +9,12 @@ Source: https://sketchfab.com/3d-models/moon-26cc0b7878bb4d919b68e2be399db466
 Title: moon
 */
 
-import React, { useRef } from 'react'
-import { useGLTF, useAnimations } from '@react-three/drei'
+import { useRef } from 'react'
+import { useGLTF } from '@react-three/drei'
 
 export default function Model(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/moon.gltf')
-  const { actions } = useAnimations(animations, group)
+  const { nodes, materials } = useGLTF('/moon.gltf')
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Sketchfab_Scene">

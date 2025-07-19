@@ -35,8 +35,8 @@ function NavBar() {
             className="rounded-3xl p-4 transition duration-100 ease-in-out hover:bg-white hover:text-black hover:rounded-3xl hover:delay-100 text-xl cursor-pointer"
             onClick={() => router.push('/about')}
             whileHover={{ scale: 1.0 }}
-            onHoverStart={(e) => {}}
-            onHoverEnd={(e) => {}}
+            onHoverStart={() => {}}
+            onHoverEnd={() => {}}
           >
             About Me
           </motion.div>
@@ -45,8 +45,8 @@ function NavBar() {
             className="rounded-3xl p-4 transition duration-100 ease-in-out hover:bg-white hover:text-black hover:rounded-3xl hover:delay-100 text-xl cursor-pointer"
             onClick={() => router.push('/portfolio')}
             whileHover={{ scale: 1.01 }}
-            onHoverStart={(e) => {}}
-            onHoverEnd={(e) => {}}
+            onHoverStart={() => {}}
+            onHoverEnd={() => {}}
           >
             Portfolio
           </motion.div>
@@ -55,8 +55,8 @@ function NavBar() {
             className="rounded-3xl p-4 transition duration-100 ease-in-out hover:bg-white hover:text-black hover:rounded-3xl hover:delay-100 text-xl cursor-pointer"
             onClick={() => router.push('/contact')}
             whileHover={{ scale: 1.01 }}
-            onHoverStart={(e) => {}}
-            onHoverEnd={(e) => {}}
+            onHoverStart={() => {}}
+            onHoverEnd={() => {}}
           >
             Contact
           </motion.div>
