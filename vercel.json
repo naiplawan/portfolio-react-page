@@ -1,10 +1,10 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "buildCommand": "pnpm run build",
   "outputDirectory": ".next",
   "installCommand": "pnpm install",
   "devCommand": "pnpm run dev",
-  "nodeVersion": "22.x",
   "functions": {
     "app/**": {
       "includeFiles": "public/**"
