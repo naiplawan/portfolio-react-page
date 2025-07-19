@@ -1,10 +1,11 @@
 import './globals.css'
-import '../src/index.css'
 import PageTransition from '../components/page-transition'
 
 export const metadata = {
-  title: 'React Resume Project',
-  description: 'Portfolio website built with Next.js',
+  title: 'Rachaphol Plookaom - Portfolio',
+  description: 'Software Developer Portfolio - Showcasing web development projects and skills',
+  keywords: 'software developer, web development, React, Next.js, portfolio',
+  author: 'Rachaphol Plookaom',
 }
 
 export default function RootLayout({ children }) {

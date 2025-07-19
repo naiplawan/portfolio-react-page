@@ -6,8 +6,7 @@ import { Textarea } from '../../components/ui/textarea'
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card'
 import { useState, useRef } from 'react'
 import emailjs from '@emailjs/browser'
-import NavBar from '../../src/component/NavBar'
-import ContactImage from '../../src/assets/8690678_3969584.svg'
+import NavBar from '../../components/portfolio/NavBar'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
@@ -49,7 +48,7 @@ export default function ContactPage() {
           transition={{ duration: 0.5 }}
           className="flex justify-center mb-8"
         >
-          <Image src={ContactImage} alt="Contact" width={500} height={400} />
+          <Image src="/assets/8690678_3969584.svg" alt="Contact" width={500} height={400} />
         </motion.div>
         
         <motion.div
