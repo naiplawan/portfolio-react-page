@@ -1,3 +1,5 @@
+'use client'
+
 import Wave from "react-wavify";
 
 export default function WaveComponent() {

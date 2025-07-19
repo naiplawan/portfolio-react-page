@@ -1,4 +1,4 @@
-import WaveComponent from '@/component/Wave';
+import WaveComponent from './Wave';
 
 function Footer() {
   return (

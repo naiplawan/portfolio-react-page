@@ -45,11 +45,11 @@ To create and personalize your React Resume Page, follow these steps:
     
 4.  Install project dependencies:
     
-    `npm install` 
+    `pnpm install` 
     
 5.  Start the development server:
     
-    `npm start` 
+    `pnpm dev` 
     
 6.  Access your resume page at `http://localhost:3000` and begin customizing your online resume.
     

@@ -1,11 +1,13 @@
+'use client'
+
 import TextTransition, { presets } from 'react-text-transition';
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 
 function NavBar() {
   const TEXTS = ['Learn', 'Unlearn', 'Relearn', 'Repeat'];
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const [index, setIndex] = useState(0);
 
@@ -21,7 +23,7 @@ function NavBar() {
     <>
       <nav className="flex flex-row justify-between  items-center p-5  rounded-b-2xl mb-10 cursor-pointer">
         {/* Right Box */}
-        <div className="text-3xl" onClick={() => navigate('/')}>
+        <div className="text-3xl" onClick={() => router.push('/')}>
           <TextTransition springConfig={presets.wobbly}>
             {TEXTS[index % TEXTS.length]}
           </TextTransition>
@@ -31,7 +33,7 @@ function NavBar() {
         <div className="flex-row hidden md:inline-flex ">
           <motion.div
             className="rounded-3xl p-4 transition duration-100 ease-in-out hover:bg-white hover:text-black hover:rounded-3xl hover:delay-100 text-xl cursor-pointer"
-            onClick={() => navigate('/about')}
+            onClick={() => router.push('/about')}
             whileHover={{ scale: 1.0 }}
             onHoverStart={(e) => {}}
             onHoverEnd={(e) => {}}
@@ -41,7 +43,7 @@ function NavBar() {
 
           <motion.div
             className="rounded-3xl p-4 transition duration-100 ease-in-out hover:bg-white hover:text-black hover:rounded-3xl hover:delay-100 text-xl cursor-pointer"
-            onClick={() => navigate('/portfolio')}
+            onClick={() => router.push('/portfolio')}
             whileHover={{ scale: 1.01 }}
             onHoverStart={(e) => {}}
             onHoverEnd={(e) => {}}
@@ -51,7 +53,7 @@ function NavBar() {
 
           <motion.div
             className="rounded-3xl p-4 transition duration-100 ease-in-out hover:bg-white hover:text-black hover:rounded-3xl hover:delay-100 text-xl cursor-pointer"
-            onClick={() => navigate('/contact')}
+            onClick={() => router.push('/contact')}
             whileHover={{ scale: 1.01 }}
             onHoverStart={(e) => {}}
             onHoverEnd={(e) => {}}
@@ -83,13 +85,13 @@ function NavBar() {
             className="menu menu-sm dropdown-content z-[1] p-1 shadow bg-base-100 rounded-box w-52 cursor-pointer"
           >
             <li>
-              <a onClick={() => navigate('/about')}>About Me</a>
+              <a onClick={() => router.push('/about')}>About Me</a>
             </li>
             <li>
-              <a onClick={() => navigate('/portfolio')}>Portfolio</a>
+              <a onClick={() => router.push('/portfolio')}>Portfolio</a>
             </li>
             <li>
-              <a onClick={() => navigate('/contact')}>Contact</a>
+              <a onClick={() => router.push('/contact')}>Contact</a>
             </li>
           </ul>
         </div>

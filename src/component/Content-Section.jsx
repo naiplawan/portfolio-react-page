@@ -1,3 +1,5 @@
+'use client'
+
 import Typewriter from "typewriter-effect";
 import { RandomReveal } from "react-random-reveal";
 import HeroSVG from "../assets/8775515_4002783.svg"

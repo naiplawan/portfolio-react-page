@@ -1,3 +1,5 @@
+'use client'
+
 import { motion } from 'framer-motion';
 
 const SkillBox = ({ title, description, imageSrc }) => {

@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useMemo, useState } from "react";
 import Particles from "@tsparticles/react";
 import { initParticlesEngine } from "@tsparticles/engine";
