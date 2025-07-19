@@ -1,4 +1,4 @@
-// File: /home/naiplawan/Desktop/WorkHub/portfolio-react-page/app/contact/page.js
+// File: /home/naiplawan/Desktop/WorkHub/portfolio-react-page/app/contact/page.tsx
 import * as entry from '../../../../app/contact/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
