@@ -1,6 +1,0 @@
-ignoredBuiltDependencies:
-  - '@tailwindcss/oxide'
-  - '@tsparticles/engine'
-  - esbuild
-  - sharp
-  - tsparticles-engine
