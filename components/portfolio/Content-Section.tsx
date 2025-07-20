@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Download, Github, Linkedin, Mail, ArrowRight } from "lucide-react";
+import { Download, Mail, ArrowRight } from "lucide-react";
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 function ContentSection() {
   const containerVariants = {
@@ -18,11 +19,10 @@ function ContentSection() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: {
-        type: "spring",
         stiffness: 300,
         damping: 24
       }
@@ -44,25 +44,27 @@ function ContentSection() {
               <br />
               <span className="text-blue-600">Plookaom</span>
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-gray-600 font-light max-w-2xl mx-auto leading-relaxed">
               Fullstack Developer crafting exceptional digital experiences with modern technologies
             </p>
           </motion.div>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-200 shadow-lg hover:shadow-xl"
+              onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
             >
               View My Work
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
-            
-            <Button 
-              variant="outline" 
+
+            <Button
+              variant="outline"
               size="lg"
               className="border-gray-300 text-gray-700 px-8 py-3 rounded-full font-medium hover:bg-gray-50 transition-all duration-200"
+              onClick={() => window.open('/Rachaphol_Resume.pdf', '_blank')}
             >
               <Download className="w-4 h-4 mr-2" />
               Download CV
@@ -70,24 +72,27 @@ function ContentSection() {
           </motion.div>
 
           <motion.div variants={itemVariants} className="flex items-center justify-center gap-6 pt-8">
-            <Button 
-              variant="ghost" 
+            <Button
+              variant="ghost"
               size="icon"
               className="h-12 w-12 rounded-full hover:bg-gray-100 transition-all duration-200"
+              onClick={() => window.open('https://github.com/naiplawan', '_blank')}
             >
-              <Github className="w-5 h-5 text-gray-600" />
+              <FaGithub className="w-5 h-5 text-gray-600" />
             </Button>
-            <Button 
-              variant="ghost" 
+            <Button
+              variant="ghost"
               size="icon"
               className="h-12 w-12 rounded-full hover:bg-gray-100 transition-all duration-200"
+              onClick={() => window.open('https://www.linkedin.com/in/rachaphol-plookaom', '_blank')}
             >
-              <Linkedin className="w-5 h-5 text-gray-600" />
+              <FaLinkedin className="w-5 h-5 text-gray-600" />
             </Button>
-            <Button 
-              variant="ghost" 
+            <Button
+              variant="ghost"
               size="icon"
               className="h-12 w-12 rounded-full hover:bg-gray-100 transition-all duration-200"
+              onClick={() => window.location.href = 'mailto:rachaphol.p@example.com'}
             >
               <Mail className="w-5 h-5 text-gray-600" />
             </Button>

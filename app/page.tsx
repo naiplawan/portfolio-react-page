@@ -1,10 +1,9 @@
 'use client';
 
-import NavBar from '../components/portfolio/NavBar';
-import MoonModel from '../components/portfolio/MoonModel';
-import ContentSection from '../components/portfolio/Content-Section';
-import SkillsSection from '../components/portfolio/Skills-Section';
-import Footer from '../components/portfolio/Footer';
+import NavBar from '@/components/portfolio/NavBar';
+import ContentSection from '@/components/portfolio/Content-Section';
+import SkillsSection from '@/components/portfolio/Skills-Section';
+import Footer from '@/components/portfolio/Footer';
 import { motion } from 'framer-motion';
 
 export default function HomePage() {

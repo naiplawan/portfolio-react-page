@@ -24,7 +24,7 @@ function NavBar() {
   };
 
   return (
-    <motion.nav 
+    <motion.nav
       className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -38,7 +38,7 @@ function NavBar() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            Rachaphol Plookaom
+            Coding | Portfolio
           </motion.div>
 
           <div className="hidden md:flex items-center space-x-1">

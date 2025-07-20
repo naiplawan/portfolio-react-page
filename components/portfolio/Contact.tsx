@@ -6,10 +6,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, Send, CheckCircle, MapPin } from 'lucide-react';
+import { Mail, Send, CheckCircle, MapPin } from 'lucide-react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { trackEvent } from '@/components/analytics';
 
 export default function Contact() {
-  const form = useRef();
+  const form = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -31,17 +33,25 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
+      trackEvent('contact_form_submit', {
+        subject: formData.subject,
+        messageLength: formData.message.length
+      });
+
       await emailjs.send('service_3wygx3u', 'template_p6wyyhb', {
         from_name: formData.name,
         from_email: formData.email,
         subject: formData.subject,
         message: formData.message
       }, 'BG8fz_8Cxun8YIhHv');
-      
+
       setIsSubmitted(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
+
+      trackEvent('contact_form_success', { subject: formData.subject });
     } catch (error) {
       console.error('Email send failed:', error);
+      trackEvent('contact_form_error', { error: error.message });
     } finally {
       setIsSubmitting(false);
     }
@@ -64,12 +74,12 @@ export default function Contact() {
 
   const socialLinks = [
     {
-      icon: Github,
+      icon: FaGithub,
       href: "https://github.com/yourusername",
       label: "GitHub"
     },
     {
-      icon: Linkedin,
+      icon: FaLinkedin,
       href: "https://linkedin.com/in/yourusername",
       label: "LinkedIn"
     }
@@ -88,11 +98,11 @@ export default function Contact() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: {
-        type: "spring",
+        // Remove 'type' or use only spring properties
         stiffness: 300,
         damping: 24
       }
@@ -125,9 +135,9 @@ export default function Contact() {
           <motion.div variants={itemVariants} className="space-y-8">
             <div className="bg-white rounded-2xl p-8 shadow-sm">
               <h3 className="text-2xl font-semibold text-gray-900 mb-6">Get In Touch</h3>
-              
+
               <p className="text-gray-600 mb-8 leading-relaxed">
-                I'm always open to discussing new opportunities, interesting projects, 
+                I'm always open to discussing new opportunities, interesting projects,
                 or just having a chat about technology and development.
               </p>
 
@@ -139,7 +149,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="font-medium text-gray-900">{info.title}</p>
-                      <a 
+                      <a
                         href={info.href}
                         className="text-gray-600 hover:text-blue-600 transition-colors"
                       >
@@ -174,7 +184,7 @@ export default function Contact() {
           <motion.div variants={itemVariants}>
             <div className="bg-white rounded-2xl p-8 shadow-sm">
               <h3 className="text-2xl font-semibold text-gray-900 mb-6">Send Message</h3>
-              
+
               {isSubmitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}

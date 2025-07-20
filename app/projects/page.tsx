@@ -2,48 +2,55 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import NavBar from '../../components/portfolio/NavBar';
+import NavBar from '@/components/portfolio/NavBar';
 import Image from 'next/image';
-import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card';
-import { Button } from '../../components/ui/button';
-import { Badge } from '../../components/ui/badge';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 
 const projects = [
   {
     id: 1,
     title: 'Movie CRUD Application',
-    description: 'A full-stack movie management system with CRUD operations, built with React and Node.js',
+    description:
+      'Full-stack movie management system with JWT authentication, advanced search, and real-time updates. Features include user reviews, ratings, and admin dashboard.',
     image: '/assets/moviecrud.png',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
+    technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'JWT', 'Socket.io'],
     githubUrl: 'https://github.com/naiplawan/movie-crud',
-    liveUrl: '#',
+    liveUrl: 'https://movie-crud-demo.vercel.app',
+    highlights: ['JWT Authentication', 'Real-time Updates', 'Advanced Search', 'Admin Dashboard'],
   },
   {
     id: 2,
-    title: 'Todo List App',
-    description: 'A responsive todo list application with local storage and drag-and-drop functionality',
+    title: 'Todo Assistant',
+    description:
+      'Intelligent task management categorization, priority suggestions, and natural language processing for task creation.',
     image: '/assets/todolist.png',
-    technologies: ['React', 'JavaScript', 'CSS3', 'LocalStorage'],
-    githubUrl: 'https://github.com/naiplawan/todo-app',
-    liveUrl: '#',
+    technologies: ['React', 'TypeScript', 'OpenAI API', 'Prisma', 'PostgreSQL'],
+    githubUrl: 'https://github.com/naiplawan/ai-todo-app',
+    liveUrl: 'https://ai-todo-assistant.vercel.app',
+    highlights: ['AI Task Categorization', 'Natural Language Processing', 'Smart Reminders', 'Analytics Dashboard'],
   },
   {
     id: 3,
-    title: 'Mobile App UI',
-    description: 'Modern mobile application UI design with smooth animations and user-friendly interface',
-    image: '/assets/mobileapp.png',
-    technologies: ['React Native', 'Expo', 'TypeScript'],
-    githubUrl: 'https://github.com/naiplawan/mobile-ui',
-    liveUrl: '#',
+    title: 'Homeservice Platform',
+    description:
+      'Comprehensive platform for home service providers with booking management, customer reviews, and payment integration.',
+    image: '/assets/homeservice.png',
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'Stripe', 'Docker'],
+    githubUrl: 'https://github.com/naiplawan/home-services-project',
+    highlights: ['Microservices Architecture', 'Payment Processing', 'Advanced Analytics', 'Multi-tenant'],
   },
   {
     id: 4,
-    title: 'Home Service Platform',
-    description: 'A service booking platform connecting homeowners with service providers',
-    image: '/assets/homeservice.png',
-    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL'],
-    githubUrl: 'https://github.com/naiplawan/home-service',
-    liveUrl: '#',
+    title: 'ByteTrack',
+    description:
+      'A sophisticated, production-ready calorie tracking and wellness application built with cutting-edge web technologies. Features a beautiful design system inspired by Apple and Spotify, comprehensive food tracking capabilities, and an exceptional user experience.',
+    image: '/assets/byte-track.png',
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Prisma', 'PostgreSQL'],
+    githubUrl: 'https://github.com/naiplawan/bytetrack',
+    liveUrl: 'https://calorie-diary.vercel.app/',
+    highlights: ['Intuitive UI', 'Real-time Tracking', 'Personalized Insights', 'Cross-platform'],
   },
 ] as const;
 
@@ -91,6 +98,33 @@ export default function ProjectsPage() {
                     ))}
                   </div>
 
+                  {project.highlights && (
+                    <div className="mb-4">
+                      <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Key Features:</h4>
+                      <div className="flex flex-wrap gap-1">
+                        {project.highlights.map((highlight) => (
+                          <Badge key={highlight} variant="outline" className="text-xs">
+                            {highlight}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {project.metrics && (
+                    <div className="mb-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                      <h4 className="text-sm font-medium text-blue-900 dark:text-blue-300 mb-2">Impact Metrics:</h4>
+                      <div className="grid grid-cols-3 gap-2 text-xs">
+                        {Object.entries(project.metrics).map(([key, value]) => (
+                          <div key={key} className="text-center">
+                            <div className="font-semibold text-blue-700 dark:text-blue-300">{value}</div>
+                            <div className="text-blue-600 dark:text-blue-400 capitalize">{key}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   <div className="flex gap-3">
                     <Button
                       variant="outline"
@@ -102,9 +136,8 @@ export default function ProjectsPage() {
                     </Button>
                     <Button
                       size="sm"
-                      onClick={() => project.liveUrl !== '#' && window.open(project.liveUrl, '_blank', 'noopener,noreferrer')}
-                      disabled={project.liveUrl === '#'}
-                      aria-label={project.liveUrl === '#' ? 'Live demo coming soon' : `View ${project.title} live demo`}
+                      onClick={() => window.open(project.liveUrl, '_blank', 'noopener,noreferrer')}
+                      aria-label={`View ${project.title} live demo`}
                     >
                       Live Demo
                     </Button>

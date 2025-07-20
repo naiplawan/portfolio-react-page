@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Badge } from '../ui/badge'
+import { Badge } from '@/components/ui/badge'
 import { Code, Database, Cloud, Brain, Smartphone, Zap } from 'lucide-react'
 
 const skillCategories = [
