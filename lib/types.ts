@@ -5,6 +5,15 @@ export interface ProjectMetrics {
   readonly responseTime?: string;
 }
 
+export interface BusinessImpact {
+  readonly roi?: string;
+  readonly costSavings?: string;
+  readonly revenueIncrease?: string;
+  readonly timeToMarket?: string;
+  readonly userSatisfaction?: string;
+  readonly businessOutcome: string;
+}
+
 export interface Project {
   readonly id: number;
   readonly title: string;
@@ -17,6 +26,7 @@ export interface Project {
   readonly liveUrl: string;
   readonly highlights?: readonly string[];
   readonly metrics?: ProjectMetrics;
+  readonly businessImpact?: BusinessImpact;
   readonly category: 'fullstack' | 'ai' | 'enterprise' | 'wellness';
   readonly status: 'live' | 'development' | 'archived';
   readonly featured: boolean;

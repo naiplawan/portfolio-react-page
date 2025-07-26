@@ -141,9 +141,8 @@ export default function LoginForm({ onLogin }: LoginFormProps) {
 
             <div className="mt-6 p-4 bg-gray-50 rounded-lg">
               <p className="text-xs text-gray-600 text-center">
-                <strong>Demo Credentials:</strong><br />
-                Username: <code className="bg-white px-1 rounded">admin</code><br />
-                Password: <code className="bg-white px-1 rounded">portfolio2025</code>
+                <strong>Note:</strong> This is a demo authentication system.<br />
+                Contact the administrator for login credentials.
               </p>
             </div>
           </CardContent>

@@ -46,14 +46,14 @@ function ContentSection() {
             </h1>
 
             <p className="text-lg sm:text-xl md:text-2xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed px-2">
-              Frontend Developer crafting innovative user experiences with modern web and mobile technologies
+              Performance-First Fullstack Architect crafting scalable solutions that drive measurable business impact
             </p>
             
             <div className="flex flex-wrap justify-center gap-2 sm:gap-3 max-w-2xl mx-auto px-4">
-              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm font-medium">React & Next.js</span>
-              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-green-100 text-green-800 rounded-full text-xs sm:text-sm font-medium">Go & Fiber</span>
-              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-purple-100 text-purple-800 rounded-full text-xs sm:text-sm font-medium">Flutter & Dart</span>
-              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-orange-100 text-orange-800 rounded-full text-xs sm:text-sm font-medium">Performance Optimization</span>
+              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm font-medium">Fullstack Architecture</span>
+              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-green-100 text-green-800 rounded-full text-xs sm:text-sm font-medium">Performance Engineering</span>
+              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-purple-100 text-purple-800 rounded-full text-xs sm:text-sm font-medium">Business Impact</span>
+              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-orange-100 text-orange-800 rounded-full text-xs sm:text-sm font-medium">Scalable Solutions</span>
             </div>
           </motion.div>
 
@@ -118,8 +118,8 @@ function ContentSection() {
             <div className="text-sm sm:text-base text-gray-600 font-medium">Months at Unixdev</div>
           </div>
           <div className="text-center space-y-2 py-4 sm:py-0 border-t sm:border-t-0 sm:border-l sm:border-r border-gray-200">
-            <div className="text-2xl sm:text-3xl font-bold text-gray-900">Frontend</div>
-            <div className="text-sm sm:text-base text-gray-600 font-medium">Specialist</div>
+            <div className="text-2xl sm:text-3xl font-bold text-gray-900">Fullstack</div>
+            <div className="text-sm sm:text-base text-gray-600 font-medium">Architect</div>
           </div>
           <div className="text-center space-y-2 py-4 sm:py-0 border-t sm:border-t-0 border-gray-200">
             <div className="text-2xl sm:text-3xl font-bold text-gray-900">20+</div>

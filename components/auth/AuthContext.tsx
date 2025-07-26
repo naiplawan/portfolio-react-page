@@ -11,11 +11,11 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-// Simple hardcoded credentials for demo purposes
-// In production, this should be handled by a proper authentication service
+// Admin credentials loaded from environment variables
+// In production, use proper authentication service with hashed passwords
 const ADMIN_CREDENTIALS = {
-  username: 'admin',
-  password: 'portfolio2025'
+  username: process.env.NEXT_PUBLIC_ADMIN_USERNAME || 'admin',
+  password: process.env.ADMIN_PASSWORD || 'portfolio2025'
 };
 
 const AUTH_KEY = 'portfolio_auth';
