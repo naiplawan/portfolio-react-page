@@ -14,20 +14,20 @@ export default function HomePage() {
     <>
       <PersonStructuredData
         name="Rachaphol Plookaom"
-        jobTitle="Fullstack Developer"
-        email={process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@example.com"}
+        jobTitle="Frontend Developer"
+        email="rachaphol.plo@gmail.com"
         url={baseUrl}
         location="Bangkok, Thailand"
         skills={[
-          "React", "Next.js", "TypeScript", "Node.js", "Python", 
-          "PostgreSQL", "MongoDB", "Docker", "AWS", "AI/ML Integration"
+          "React.js", "Next.js", "TypeScript", "Go", "Go Fiber", "Flutter", 
+          "Dart", "Node.js", "Python", "Django", "Performance Optimization"
         ]}
-        description="Experienced fullstack developer specializing in React, Next.js, Node.js, Python, and AI integration. Available for hire."
+        description="Frontend Developer at Unixdev Co., Ltd. specializing in innovative user experiences, performance optimization, and modern web/mobile technologies. Full-stack capabilities with Go and Flutter."
       />
       
       <WebsiteStructuredData
         name="Rachaphol Plookaom - Portfolio"
-        description="Experienced fullstack developer specializing in React, Next.js, Node.js, Python, and AI integration. Available for hire."
+        description="Frontend Developer at Unixdev Co., Ltd. specializing in innovative user experiences, performance optimization, and modern web/mobile technologies. Full-stack capabilities with Go and Flutter."
         url={baseUrl}
       />
 

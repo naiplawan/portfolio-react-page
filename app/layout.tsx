@@ -6,18 +6,19 @@ import { ThemeProvider } from '@/components/theme-provider'
 import { Analytics } from '@/components/analytics'
 import { PerformanceMonitor } from '@/components/performance-monitor'
 import { SkipLink } from '@/components/accessibility/skip-link'
+import { AuthProvider } from '@/components/auth/AuthContext'
 
 export const metadata = {
-  title: 'Rachaphol Plookaom - Fullstack Developer',
-  description: 'Experienced fullstack developer specializing in React, Next.js, Node.js, Python, and AI integration. Available for hire.',
-  keywords: 'fullstack developer, React, Next.js, Node.js, Python, TypeScript, AI developer, web development, software engineer',
+  title: 'Rachaphol Plookaom - Frontend Developer',
+  description: 'Frontend Developer at Unixdev Co., Ltd. specializing in innovative user experiences, performance optimization, and modern web/mobile technologies.',
+  keywords: 'frontend developer, React, Next.js, TypeScript, Go, Flutter, performance optimization, web development, software engineer, Unixdev',
   author: 'Rachaphol Plookaom',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://rachaphol-portfolio.vercel.app',
-    title: 'Rachaphol Plookaom - Fullstack Developer',
-    description: 'Experienced fullstack developer specializing in React, Next.js, Node.js, Python, and AI integration. Available for hire.',
+    title: 'Rachaphol Plookaom - Frontend Developer',
+    description: 'Frontend Developer at Unixdev Co., Ltd. specializing in innovative user experiences, performance optimization, and modern web/mobile technologies.',
     siteName: 'Rachaphol Portfolio',
     images: [
       {
@@ -30,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Rachaphol Plookaom - Fullstack Developer',
-    description: 'Experienced fullstack developer specializing in React, Next.js, Node.js, Python, and AI integration.',
+    title: 'Rachaphol Plookaom - Frontend Developer',
+    description: 'Frontend Developer at Unixdev Co., Ltd. specializing in innovative user experiences, performance optimization, and modern web/mobile technologies.',
     images: ['/og-image.jpg'],
   },
   robots: 'index, follow',
@@ -68,14 +69,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
           enableSystem
           disableTransitionOnChange={false}
         >
-          <Analytics />
-          <PerformanceMonitor />
-          <TransitionOverlay />
-          <PageTransition>
-            <main id="main-content" tabIndex={-1} className="focus:outline-none">
-              {children}
-            </main>
-          </PageTransition>
+          <AuthProvider>
+            <Analytics />
+            <PerformanceMonitor />
+            <TransitionOverlay />
+            <PageTransition>
+              <main id="main-content" tabIndex={-1} className="focus:outline-none">
+                {children}
+              </main>
+            </PageTransition>
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>
