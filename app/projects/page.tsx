@@ -39,6 +39,7 @@ const projects = [
     image: '/assets/homeservice.png',
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'Stripe', 'Docker'],
     githubUrl: 'https://github.com/naiplawan/home-services-project',
+    liveUrl: '', // Add an empty string or a valid URL if available
     highlights: ['Microservices Architecture', 'Payment Processing', 'Advanced Analytics', 'Multi-tenant'],
   },
   {
@@ -111,19 +112,7 @@ export default function ProjectsPage() {
                     </div>
                   )}
 
-                  {project.metrics && (
-                    <div className="mb-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-                      <h4 className="text-sm font-medium text-blue-900 dark:text-blue-300 mb-2">Impact Metrics:</h4>
-                      <div className="grid grid-cols-3 gap-2 text-xs">
-                        {Object.entries(project.metrics).map(([key, value]) => (
-                          <div key={key} className="text-center">
-                            <div className="font-semibold text-blue-700 dark:text-blue-300">{value}</div>
-                            <div className="text-blue-600 dark:text-blue-400 capitalize">{key}</div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                  {/* Metrics block removed because 'metrics' property does not exist on project objects */}
 
                   <div className="flex gap-3">
                     <Button
@@ -134,13 +123,15 @@ export default function ProjectsPage() {
                     >
                       GitHub
                     </Button>
-                    <Button
-                      size="sm"
-                      onClick={() => window.open(project.liveUrl, '_blank', 'noopener,noreferrer')}
-                      aria-label={`View ${project.title} live demo`}
-                    >
-                      Live Demo
-                    </Button>
+                    {project.liveUrl && (
+                      <Button
+                        size="sm"
+                        onClick={() => window.open(project.liveUrl, '_blank', 'noopener,noreferrer')}
+                        aria-label={`View ${project.title} live demo`}
+                      >
+                        Live Demo
+                      </Button>
+                    )}
                   </div>
                 </CardContent>
               </Card>

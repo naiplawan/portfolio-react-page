@@ -1,32 +1,17 @@
 'use client';
 
-import { useState } from 'react';
 import NavBar from '@/components/portfolio/NavBar';
 import AboutMe from '@/components/portfolio/AboutMe';
 import GitHubStats from '@/components/portfolio/GitHubStats';
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { Download } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaFacebook } from 'react-icons/fa';
-import { saveAs } from 'file-saver';
 
 export default function AboutPage() {
-  const [isDownload, setIsDownload] = useState(false);
-
-  const handleDownloadResume = () => {
-    const fileURL = '/Rachaphol_Resume.pdf';
-    saveAs(fileURL, 'Rachaphol_Resume.pdf');
-    setIsDownload(true);
-    setTimeout(() => {
-      setIsDownload(false);
-    }, 3000);
-  };
-
   const socialLinks = [
     {
       icon: FaFacebook,
       href: 'https://www.facebook.com/mos.jrpt',
-      label: 'Facebook',
+      label: 'Facebook', 
       color: 'hover:text-blue-600',
     },
     {

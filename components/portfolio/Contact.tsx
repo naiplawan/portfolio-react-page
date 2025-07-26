@@ -1,9 +1,9 @@
 'use client'
 
+import React, { useState, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { Mail, Send, CheckCircle, MapPin } from 'lucide-react';
@@ -21,16 +21,28 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    // Validate environment variables
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error('EmailJS configuration missing. Please set environment variables.');
+      alert('Contact form is not configured. Please try again later.');
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
       trackEvent('contact_form_submit', {
@@ -38,12 +50,12 @@ export default function Contact() {
         messageLength: formData.message.length
       });
 
-      await emailjs.send('service_3wygx3u', 'template_p6wyyhb', {
+      await emailjs.send(serviceId, templateId, {
         from_name: formData.name,
         from_email: formData.email,
         subject: formData.subject,
         message: formData.message
-      }, 'BG8fz_8Cxun8YIhHv');
+      }, publicKey);
 
       setIsSubmitted(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
@@ -51,7 +63,9 @@ export default function Contact() {
       trackEvent('contact_form_success', { subject: formData.subject });
     } catch (error) {
       console.error('Email send failed:', error);
-      trackEvent('contact_form_error', { error: error.message });
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      trackEvent('contact_form_error', { error: errorMessage });
+      alert('Failed to send message. Please try again later.');
     } finally {
       setIsSubmitting(false);
     }
@@ -61,8 +75,8 @@ export default function Contact() {
     {
       icon: Mail,
       title: "Email",
-      value: "rachaphol.plookaom@example.com",
-      href: "mailto:rachaphol.plookaom@example.com"
+      value: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@example.com",
+      href: `mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@example.com"}`
     },
     {
       icon: MapPin,
@@ -75,12 +89,12 @@ export default function Contact() {
   const socialLinks = [
     {
       icon: FaGithub,
-      href: "https://github.com/yourusername",
+      href: process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com",
       label: "GitHub"
     },
     {
       icon: FaLinkedin,
-      href: "https://linkedin.com/in/yourusername",
+      href: process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://linkedin.com",
       label: "LinkedIn"
     }
   ];

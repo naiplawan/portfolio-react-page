@@ -1,8 +1,11 @@
 import './globals.css'
+import React from 'react'
 import PageTransition from '@/components/page-transition'
 import TransitionOverlay from '@/components/transition-overlay'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Analytics } from '@/components/analytics'
+import { PerformanceMonitor } from '@/components/performance-monitor'
+import { SkipLink } from '@/components/accessibility/skip-link'
 
 export const metadata = {
   title: 'Rachaphol Plookaom - Fullstack Developer',
@@ -32,12 +35,33 @@ export const metadata = {
     images: ['/og-image.jpg'],
   },
   robots: 'index, follow',
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Rachaphol Portfolio',
+  },
+  icons: {
+    icon: [
+      { url: '/icons/icon-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icons/icon-512x512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/icons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/icons/icon-192x192.png',
+  },
 }
 
-export default function RootLayout({ children }) {
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className="antialiased bg-background text-foreground min-h-screen">
+        <SkipLink />
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
@@ -45,9 +69,12 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange={false}
         >
           <Analytics />
+          <PerformanceMonitor />
           <TransitionOverlay />
           <PageTransition>
-            {children}
+            <main id="main-content" tabIndex={-1} className="focus:outline-none">
+              {children}
+            </main>
           </PageTransition>
         </ThemeProvider>
       </body>

@@ -12,9 +12,9 @@ Title: moon
 import { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
-export default function Model(props) {
-  const group = useRef()
-  const { nodes, materials } = useGLTF('/moon.gltf')
+export default function Model(props: any) {
+  const group = useRef<any>(null)
+  const { nodes, materials } = useGLTF('/moon.gltf') as any
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Sketchfab_Scene">

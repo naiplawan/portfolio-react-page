@@ -10,7 +10,7 @@ export default function MoonModel() {
     <>
       <div className="flex flex-row ">
         <Canvas style={{ height: "100vh !important", width:"50vw"}}>
-          <ambientLight color={{intensity: 0.5}}/>
+          <ambientLight intensity={0.5}/>
           <OrbitControls enableZoom={false}/>
           <Suspense fallback={null}>
             <Moon />
