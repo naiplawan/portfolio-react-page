@@ -2,11 +2,10 @@
 
 import { motion } from 'framer-motion'
 import { Badge } from '@/components/ui/badge'
-import { Code, Database, Cloud, Brain, Smartphone, Zap } from 'lucide-react'
+import { Code, Database, Cloud, Brain, Smartphone, Zap, Monitor } from 'lucide-react'
 
 interface Skill {
   name: string;
-  level: number; // 1-100
   years?: number;
 }
 
@@ -23,11 +22,13 @@ const skillCategories: SkillCategory[] = [
     icon: Code,
     description: "Building modern, responsive user interfaces",
     skills: [
-      { name: "React", level: 95, years: 4 },
-      { name: "Next.js", level: 90, years: 3 },
-      { name: "TypeScript", level: 85, years: 3 },
-      { name: "Tailwind CSS", level: 88, years: 2 },
-      { name: "Framer Motion", level: 75, years: 1 }
+      { name: "HTML5 & CSS3" },
+      { name: "JavaScript" },
+      { name: "React.js" },
+      { name: "Next.js" },
+      { name: "TypeScript" },
+      { name: "Tailwind CSS" },
+      { name: "Ant Design" }
     ]
   },
   {
@@ -35,11 +36,13 @@ const skillCategories: SkillCategory[] = [
     icon: Database,
     description: "Server-side development and API design",
     skills: [
-      { name: "Node.js", level: 88, years: 4 },
-      { name: "Python", level: 82, years: 3 },
-      { name: "Express", level: 85, years: 3 },
-      { name: "Django", level: 75, years: 2 },
-      { name: "REST APIs", level: 90, years: 4 }
+      { name: "Python" },
+      { name: "Django" },
+      { name: "Node.js" },
+      { name: "Express.js" },
+      { name: "Go" },
+      { name: "Go Fiber" },
+      { name: "REST APIs" }
     ]
   },
   {
@@ -47,11 +50,11 @@ const skillCategories: SkillCategory[] = [
     icon: Database,
     description: "Data storage and management solutions",
     skills: [
-      { name: "PostgreSQL", level: 85, years: 3 },
-      { name: "MongoDB", level: 80, years: 2 },
-      { name: "Redis", level: 70, years: 2 },
-      { name: "Prisma", level: 78, years: 1 },
-      { name: "Firebase", level: 75, years: 2 }
+      { name: "PostgreSQL" },
+      { name: "MongoDB" },
+      { name: "SQL" },
+      { name: "pgAdmin" },
+      { name: "Elasticsearch" }
     ]
   },
   {
@@ -59,33 +62,43 @@ const skillCategories: SkillCategory[] = [
     icon: Brain,
     description: "Artificial intelligence and machine learning integration",
     skills: [
-      { name: "LLM Integration", level: 85, years: 1 },
-      { name: "RAG Systems", level: 80, years: 1 },
-      { name: "OpenAI API", level: 88, years: 1 },
-      { name: "Langchain", level: 75, years: 1 }
+      { name: "Large Language Models (LLM)" },
+      { name: "Retrieval-Augmented Generation (RAG)" },
+      { name: "AI Integration" }
     ]
   },
   {
-    title: "Cloud",
+    title: "Cloud & DevOps",
     icon: Cloud,
     description: "Cloud infrastructure and deployment",
     skills: [
-      { name: "AWS", level: 78, years: 3 },
-      { name: "Docker", level: 82, years: 3 },
-      { name: "Kubernetes", level: 65, years: 1 },
-      { name: "CI/CD", level: 80, years: 2 },
-      { name: "Cloudflare", level: 70, years: 2 }
+      { name: "DigitalOcean" },
+      { name: "Cloudflare" },
+      { name: "Docker" },
+      { name: "CI/CD" },
+      { name: "Nginx" }
     ]
   },
   {
-    title: "Mobile",
+    title: "Mobile & Apps",
     icon: Smartphone,
-    description: "Mobile and cross-platform development",
+    description: "Cross-platform mobile development",
     skills: [
-      { name: "React Native", level: 75, years: 2 },
-      { name: "PWA", level: 85, years: 2 },
-      { name: "Expo", level: 70, years: 1 },
-      { name: "Cross-platform", level: 78, years: 2 }
+      { name: "Flutter" },
+      { name: "Dart" },
+      { name: "Cross-platform Development" }
+    ]
+  },
+  {
+    title: "Tools & Others",
+    icon: Monitor,
+    description: "Development tools and additional technologies",
+    skills: [
+      { name: "Git" },
+      { name: "Postman" },
+      { name: "Webflow" },
+      { name: "Wagtail CMS" },
+      { name: "Manual Software Testing" }
     ]
   }
 ]
@@ -108,7 +121,7 @@ export default function SkillsSection() {
       opacity: 1, 
       y: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 300,
         damping: 24
       }
@@ -116,27 +129,41 @@ export default function SkillsSection() {
   };
 
   return (
-    <section className="py-24 px-6 lg:px-8">
+    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16 space-y-4"
+          className="text-center mb-12 sm:mb-16 space-y-4"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
             Technology Stack
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
-            Full-stack expertise across modern web technologies, cloud platforms, and AI integration
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto font-light px-2">
+            Production-ready expertise across modern web technologies, cloud platforms, and AI integration
           </p>
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mt-4 sm:mt-6 px-4">
+            <div className="flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-blue-50 rounded-full">
+              <div className="w-2 h-2 sm:w-3 sm:h-3 bg-blue-500 rounded-full"></div>
+              <span className="text-xs sm:text-sm text-blue-700 font-medium">Currently at Unixdev</span>
+            </div>
+            <div className="flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-green-50 rounded-full">
+              <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-full"></div>
+              <span className="text-xs sm:text-sm text-green-700 font-medium">Frontend Specialist</span>
+            </div>
+            <div className="flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-purple-50 rounded-full">
+              <div className="w-2 h-2 sm:w-3 sm:h-3 bg-purple-500 rounded-full"></div>
+              <span className="text-xs sm:text-sm text-purple-700 font-medium">Full Stack Capable</span>
+            </div>
+          </div>
         </motion.div>
 
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
         >
           {skillCategories.map((category) => (
             <motion.div
@@ -144,56 +171,37 @@ export default function SkillsSection() {
               variants={itemVariants}
               whileHover={{ y: -8 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300"
+              className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-sm hover:shadow-lg transition-all duration-300"
             >
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center">
-                    <category.icon className="w-6 h-6 text-blue-600" />
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-50 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+                    <category.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900">{category.title}</h3>
-                    <p className="text-sm text-gray-600">{category.description}</p>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-lg sm:text-xl font-semibold text-gray-900 truncate">{category.title}</h3>
+                    <p className="text-xs sm:text-sm text-gray-600 line-clamp-2">{category.description}</p>
                   </div>
                 </div>
                 
-                <div className="space-y-3">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {category.skills.map((skill, skillIndex) => (
                     <motion.div
                       key={skill.name}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: skillIndex * 0.1 }}
-                      className="space-y-2"
+                      className="flex items-center gap-1.5 sm:gap-2 bg-blue-50 px-2 py-1.5 sm:px-3 sm:py-2 rounded-md sm:rounded-lg border border-blue-100"
                     >
-                      <div className="flex justify-between items-center">
-                        <div className="flex items-center gap-2">
-                          <span className="font-medium text-gray-900">{skill.name}</span>
-                          {skill.years && (
-                            <Badge 
-                              variant="outline"
-                              className="text-xs text-blue-600 border-blue-200"
-                            >
-                              {skill.years}y
-                            </Badge>
-                          )}
-                        </div>
-                        <span className="text-sm text-gray-600 font-medium">
-                          {skill.level}%
-                        </span>
-                      </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
-                        <motion.div
-                          className="h-2 rounded-full bg-gradient-to-r from-blue-500 to-blue-600"
-                          initial={{ width: 0 }}
-                          animate={{ width: `${skill.level}%` }}
-                          transition={{ 
-                            duration: 1.2, 
-                            delay: skillIndex * 0.1 + 0.5,
-                            ease: "easeOut" 
-                          }}
-                        />
-                      </div>
+                      <span className="text-xs sm:text-sm font-medium text-gray-900">{skill.name}</span>
+                      {skill.years && (
+                        <Badge 
+                          variant="outline"
+                          className="text-xs text-blue-600 border-blue-200 bg-white px-1 py-0"
+                        >
+                          {skill.years}y
+                        </Badge>
+                      )}
                     </motion.div>
                   ))}
                 </div>
