@@ -8,14 +8,11 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { 
   Plus, 
   Edit, 
   Trash2, 
   Save, 
-  Eye, 
   FileText, 
   Clock,
   Calendar,
@@ -240,11 +237,18 @@ function BlogManageContent() {
         <NavBar />
         <div className="pt-24 pb-16 px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <BlogForm
-              post={selectedPost || undefined}
-              onSave={refreshPosts}
-              onCancel={() => setIsEditing(false)}
-            />
+            {selectedPost ? (
+              <BlogForm
+                post={selectedPost}
+                onSave={refreshPosts}
+                onCancel={() => setIsEditing(false)}
+              />
+            ) : (
+              <BlogForm
+                onSave={refreshPosts}
+                onCancel={() => setIsEditing(false)}
+              />
+            )}
           </div>
         </div>
       </div>

@@ -22,7 +22,6 @@ export default function WaveComponent() {
                     amplitude: 80,
                     speed: 0.25,
                     points: 2,
-                    opacity: 0.5,
                 }}/>
         </div>
     );

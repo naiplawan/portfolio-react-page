@@ -1,20 +1,19 @@
 'use client'
 
 import { useEffect, useMemo, useState } from "react";
-import Particles from "@tsparticles/react";
-import { initParticlesEngine } from "@tsparticles/engine";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
 
 const StarParticles = () => {
   const [init, setInit] = useState(false);
   useEffect(() => {
-    initParticlesEngine().then(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => {
       setInit(true);
     });
   }, []);
 
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
 
   const options = useMemo(
     () => ({
@@ -57,10 +56,10 @@ const StarParticles = () => {
           width: 1,
         },
         move: {
-          direction: "none",
+          direction: "none" as const,
           enable: true,
           outModes: {
-            default: "bounce",
+            default: "bounce" as const,
           },
           random: false,
           speed: 6,
@@ -77,9 +76,11 @@ const StarParticles = () => {
           value: 0.5,
         },
         shape: {
-          type: "star", // Changed from "circle" to "star"
+          type: "star",
           options: {
-            sides: 5, // Number of sides for the star shape
+            star: {
+              sides: 5,
+            },
           },
         },
         size: {
@@ -95,8 +96,6 @@ const StarParticles = () => {
     return (
       <Particles
         id="tsparticles"
-        init={initParticlesEngine}
-        loaded={particlesLoaded}
         options={options}
       />
     );

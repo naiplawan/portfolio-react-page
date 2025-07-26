@@ -31,7 +31,7 @@ function DialogClose({
 function DialogOverlay({
   className,
   ...props
-}) {
+}: React.ComponentProps<typeof DialogPrimitive.Overlay>) {
   return (
     <DialogPrimitive.Overlay
       data-slot="dialog-overlay"

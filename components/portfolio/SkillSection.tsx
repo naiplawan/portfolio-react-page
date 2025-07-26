@@ -1,4 +1,4 @@
-import SkillBox from './Skill-Box';
+import SkillBox from './SkillBox';
 
 function SkillSection() { 
   return (

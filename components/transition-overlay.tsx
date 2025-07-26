@@ -18,20 +18,11 @@ export default function TransitionOverlay() {
     initial: { scaleY: 0, transformOrigin: 'bottom' },
     animate: { 
       scaleY: 1,
-      transformOrigin: 'bottom',
-      transition: {
-        duration: 0.4,
-        ease: [0.25, 0.1, 0.25, 1]
-      }
+      transformOrigin: 'bottom'
     },
     exit: { 
       scaleY: 0,
-      transformOrigin: 'top',
-      transition: {
-        duration: 0.4,
-        ease: [0.25, 0.1, 0.25, 1],
-        delay: 0.1
-      }
+      transformOrigin: 'top'
     }
   }
 

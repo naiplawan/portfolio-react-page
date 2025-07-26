@@ -18,13 +18,6 @@ interface GitHubRepo {
   html_url: string;
 }
 
-interface GitHubContributions {
-  total: { [year: number]: number };
-  contributions: Array<{
-    date: string;
-    count: number;
-  }>;
-}
 
 interface LanguageStats {
   [language: string]: number;

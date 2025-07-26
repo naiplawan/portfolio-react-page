@@ -1,83 +1,25 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { Calendar, Clock, Search, Tag, ArrowRight } from 'lucide-react';
+import { Calendar, Clock, Search, Tag, ArrowRight, Settings } from 'lucide-react';
 import Link from 'next/link';
 import NavBar from '@/components/portfolio/NavBar';
 import Footer from '@/components/portfolio/Footer';
-
-interface BlogPost {
-  id: string;
-  title: string;
-  excerpt: string;
-  content: string;
-  tags: string[];
-  publishedAt: string;
-  readTime: number;
-  featured: boolean;
-}
-
-const blogPosts: BlogPost[] = [
-  {
-    id: 'modern-react-patterns',
-    title: 'Modern React Patterns in 2024',
-    excerpt: 'Exploring the latest patterns and best practices for building scalable React applications with hooks, context, and custom patterns.',
-    content: 'Full content here...',
-    tags: ['React', 'JavaScript', 'Frontend'],
-    publishedAt: '2024-01-15',
-    readTime: 8,
-    featured: true,
-  },
-  {
-    id: 'nextjs-performance',
-    title: 'Optimizing Next.js Performance',
-    excerpt: 'A comprehensive guide to improving Core Web Vitals and overall performance in Next.js applications.',
-    content: 'Full content here...',
-    tags: ['Next.js', 'Performance', 'SEO'],
-    publishedAt: '2024-01-10',
-    readTime: 12,
-    featured: true,
-  },
-  {
-    id: 'ai-integration-web',
-    title: 'Integrating AI into Web Applications',
-    excerpt: 'How to effectively integrate LLMs and AI services into modern web applications for enhanced user experiences.',
-    content: 'Full content here...',
-    tags: ['AI', 'LLM', 'Integration'],
-    publishedAt: '2024-01-05',
-    readTime: 15,
-    featured: false,
-  },
-  {
-    id: 'typescript-advanced',
-    title: 'Advanced TypeScript Techniques',
-    excerpt: 'Deep dive into advanced TypeScript features including conditional types, mapped types, and utility types.',
-    content: 'Full content here...',
-    tags: ['TypeScript', 'Development', 'Types'],
-    publishedAt: '2023-12-28',
-    readTime: 10,
-    featured: false,
-  },
-  {
-    id: 'database-optimization',
-    title: 'Database Optimization Strategies',
-    excerpt: 'Proven strategies for optimizing database performance in PostgreSQL and MongoDB for high-traffic applications.',
-    content: 'Full content here...',
-    tags: ['Database', 'PostgreSQL', 'MongoDB'],
-    publishedAt: '2023-12-20',
-    readTime: 14,
-    featured: false,
-  },
-];
+import { BlogPost, getPublishedBlogPosts } from '@/lib/blog';
 
 export default function BlogPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedTag, setSelectedTag] = useState('');
+  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
+
+  useEffect(() => {
+    setBlogPosts(getPublishedBlogPosts());
+  }, []);
 
   const allTags = Array.from(new Set(blogPosts.flatMap(post => post.tags)));
 
@@ -133,14 +75,24 @@ export default function BlogPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="mb-16"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Blog & Insights
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Sharing knowledge about modern web development, AI integration, and software engineering best practices.
-            </p>
+            <div className="flex justify-between items-center mb-6">
+              <div className="text-center flex-1">
+                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                  Blog & Insights
+                </h1>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Sharing knowledge about modern web development, AI integration, and software engineering best practices.
+                </p>
+              </div>
+              <Link href="/blog/manage">
+                <Button variant="outline" className="bg-white hover:bg-gray-50 ml-6">
+                  <Settings className="w-4 h-4 mr-2" />
+                  Manage
+                </Button>
+              </Link>
+            </div>
           </motion.div>
 
           {/* Search and Filter */}
@@ -226,7 +178,7 @@ export default function BlogPage() {
                           </div>
                         </div>
                         <Button className="w-full mt-4" asChild>
-                          <Link href={`/blog/${post.id}`}>
+                          <Link href={`/blog/${post.slug || post.id}`}>
                             Read Article
                             <ArrowRight className="w-4 h-4 ml-2" />
                           </Link>
@@ -274,7 +226,7 @@ export default function BlogPage() {
                           ))}
                         </div>
                         <Button variant="outline" className="w-full" asChild>
-                          <Link href={`/blog/${post.id}`}>
+                          <Link href={`/blog/${post.slug || post.id}`}>
                             Read More
                             <ArrowRight className="w-4 h-4 ml-2" />
                           </Link>

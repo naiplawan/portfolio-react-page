@@ -15,7 +15,7 @@ function ScrollArea({
         className="focus-visible:ring-slate-950/50 size-full rounded-[inherit] transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:outline-1 dark:focus-visible:ring-slate-300/50">
         {children}
       </ScrollAreaPrimitive.Viewport>
-      <ScrollBar />
+      <ScrollBar className="" />
       <ScrollAreaPrimitive.Corner />
     </ScrollAreaPrimitive.Root>
   );
@@ -25,7 +25,10 @@ function ScrollBar({
   className,
   orientation = "vertical",
   ...props
-}) {
+}: {
+  className?: string;
+  orientation?: "vertical" | "horizontal";
+} & React.ComponentProps<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>) {
   return (
     <ScrollAreaPrimitive.ScrollAreaScrollbar
       data-slot="scroll-area-scrollbar"
