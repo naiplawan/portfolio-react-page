@@ -24,8 +24,8 @@ const pageVariants = {
 
 const pageTransition = {
   type: 'spring' as const,
-  stiffness: 300,
-  damping: 30,
+  stiffness: 400,
+  damping: 40,
   mass: 0.8,
 }
 
@@ -45,7 +45,8 @@ export default function PageTransition({ children }: PageTransitionProps) {
         exit="out"
         variants={pageVariants}
         transition={pageTransition}
-        className="min-h-screen"
+        className="min-h-screen w-full"
+        style={{ willChange: 'transform, opacity' }}
       >
         {children}
       </motion.div>

@@ -21,8 +21,11 @@ function NavBar() {
   ];
 
   const handleNavigation = (href: string) => {
-    router.push(href);
     setIsOpen(false);
+    // Small delay to ensure mobile menu closes before navigation
+    setTimeout(() => {
+      router.push(href);
+    }, 100);
   };
 
   // Close mobile menu on escape key
@@ -48,16 +51,18 @@ function NavBar() {
       role="navigation"
       aria-label="Main navigation"
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           <motion.button
-            className="text-xl font-semibold text-foreground cursor-pointer tracking-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md px-2 py-1"
+            className="text-lg sm:text-xl font-semibold text-foreground cursor-pointer tracking-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md px-2 py-1 truncate max-w-[200px] sm:max-w-none"
             onClick={() => router.push('/')}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             aria-label="Go to homepage"
+            title="Coding | Portfolio"
           >
-            Coding | Portfolio
+            <span className="hidden sm:inline">Coding | Portfolio</span>
+            <span className="sm:hidden">Portfolio</span>
           </motion.button>
 
           <div className="hidden md:flex items-center space-x-1" role="menubar">
@@ -93,22 +98,22 @@ function NavBar() {
                 <Button 
                   variant="ghost" 
                   size="icon" 
-                  className="h-10 w-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  className="h-9 w-9 sm:h-10 sm:w-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md"
                   aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
                   aria-expanded={isOpen}
                   aria-controls="mobile-menu"
                 >
-                  {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                  {isOpen ? <X className="h-4 w-4 sm:h-5 sm:w-5" /> : <Menu className="h-4 w-4 sm:h-5 sm:w-5" />}
                 </Button>
               </SheetTrigger>
               <SheetContent 
                 side="right" 
-                className="w-80"
+                className="w-[280px] sm:w-80 px-4"
                 aria-labelledby="mobile-menu-title"
               >
-                <div className="flex flex-col space-y-4 mt-8" id="mobile-menu">
+                <div className="flex flex-col space-y-4 mt-6" id="mobile-menu">
                   <div 
-                    className="text-lg font-semibold text-foreground mb-6"
+                    className="text-lg font-semibold text-foreground mb-4 pb-2 border-b border-border"
                     id="mobile-menu-title"
                   >
                     Navigation
@@ -123,10 +128,10 @@ function NavBar() {
                       >
                         <Button
                           variant="ghost"
-                          className={`w-full justify-start text-left px-0 py-3 text-base font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md ${
+                          className={`w-full justify-start text-left px-3 py-4 text-base font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg transition-all duration-200 ${
                             isActiveRoute(item.href)
-                              ? 'text-foreground bg-accent'
-                              : 'text-muted-foreground hover:text-foreground'
+                              ? 'text-foreground bg-accent border-l-4 border-primary'
+                              : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
                           }`}
                           onClick={() => handleNavigation(item.href)}
                           role="menuitem"

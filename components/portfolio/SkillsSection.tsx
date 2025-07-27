@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import { Badge } from '@/components/ui/badge'
-import { Code, Database, Cloud, Brain, Smartphone, Zap, Monitor } from 'lucide-react'
+import { motion } from 'framer-motion';
+import { Badge } from '@/components/ui/badge';
+import { Code, Database, Cloud, Brain, Smartphone, Zap, Monitor } from 'lucide-react';
 
 interface Skill {
   name: string;
@@ -18,90 +18,86 @@ interface SkillCategory {
 
 const skillCategories: SkillCategory[] = [
   {
-    title: "Frontend",
+    title: 'Frontend',
     icon: Code,
-    description: "Building modern, responsive user interfaces",
+    description: 'Building modern, responsive user interfaces',
     skills: [
-      { name: "HTML5 & CSS3" },
-      { name: "JavaScript" },
-      { name: "React.js" },
-      { name: "Next.js" },
-      { name: "TypeScript" },
-      { name: "Tailwind CSS" },
-      { name: "Ant Design" }
-    ]
+      { name: 'HTML5 & CSS3' },
+      { name: 'JavaScript' },
+      { name: 'React.js' },
+      { name: 'Next.js' },
+      { name: 'TypeScript' },
+      { name: 'Tailwind CSS' },
+      { name: 'Ant Design' },
+    ],
   },
   {
-    title: "Backend", 
+    title: 'Backend',
     icon: Database,
-    description: "Server-side development and API design",
+    description: 'Server-side development and API design',
     skills: [
-      { name: "Python" },
-      { name: "Django" },
-      { name: "Node.js" },
-      { name: "Express.js" },
-      { name: "Go" },
-      { name: "Go Fiber" },
-      { name: "REST APIs" }
-    ]
+      { name: 'Python' },
+      { name: 'Django' },
+      { name: 'Node.js' },
+      { name: 'Express.js' },
+      { name: 'Go' },
+      { name: 'Go Fiber' },
+      { name: 'REST APIs' },
+    ],
   },
   {
-    title: "Database",
+    title: 'Database',
     icon: Database,
-    description: "Data storage and management solutions",
+    description: 'Data storage and management solutions',
     skills: [
-      { name: "PostgreSQL" },
-      { name: "MongoDB" },
-      { name: "SQL" },
-      { name: "pgAdmin" },
-      { name: "Elasticsearch" }
-    ]
+      { name: 'PostgreSQL' },
+      { name: 'MongoDB' },
+      { name: 'SQL' },
+      { name: 'pgAdmin' },
+      { name: 'Elasticsearch' },
+    ],
   },
   {
-    title: "AI & ML",
+    title: 'AI & ML',
     icon: Brain,
-    description: "Artificial intelligence and machine learning integration",
+    description: 'Artificial intelligence and machine learning integration',
     skills: [
-      { name: "Large Language Models (LLM)" },
-      { name: "Retrieval-Augmented Generation (RAG)" },
-      { name: "AI Integration" }
-    ]
+      { name: 'Large Language Models (LLM)' },
+      { name: 'Retrieval-Augmented Generation (RAG)' },
+      { name: 'AI Integration' },
+    ],
   },
   {
-    title: "Cloud & DevOps",
+    title: 'Cloud & DevOps',
     icon: Cloud,
-    description: "Cloud infrastructure and deployment",
+    description: 'Cloud infrastructure and deployment',
     skills: [
-      { name: "DigitalOcean" },
-      { name: "Cloudflare" },
-      { name: "Docker" },
-      { name: "CI/CD" },
-      { name: "Nginx" }
-    ]
+      { name: 'DigitalOcean' },
+      { name: 'Cloudflare' },
+      { name: 'Docker' },
+      { name: 'CI/CD' },
+      { name: 'Nginx' },
+    ],
   },
   {
-    title: "Mobile & Apps",
+    title: 'Mobile & Apps',
     icon: Smartphone,
-    description: "Cross-platform mobile development",
-    skills: [
-      { name: "Flutter" },
-      { name: "Dart" },
-      { name: "Cross-platform Development" }
-    ]
+    description: 'Cross-platform mobile development',
+    skills: [{ name: 'Flutter' }, { name: 'Dart' }, { name: 'Cross-platform Development' }],
   },
   {
-    title: "Tools & Others",
+    title: 'Tools & Others',
     icon: Monitor,
-    description: "Development tools and additional technologies",
+    description: 'Development tools and additional technologies',
     skills: [
-      { name: "Git" },
-      { name: "Postman" },
-      { name: "Webflow" },
-      { name: "Wagtail CMS" },
-      { name: "Manual Software Testing" }
-    ]
-  }
-]
+      { name: 'Git' },
+      { name: 'Postman' },
+      { name: 'Webflow' },
+      { name: 'Wagtail CMS' },
+      { name: 'Manual Software Testing' },
+    ],
+  },
+];
 
 export default function SkillsSection() {
   const containerVariants = {
@@ -110,22 +106,22 @@ export default function SkillsSection() {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
+        delayChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: {
-        type: "spring" as const,
+        type: 'spring' as const,
         stiffness: 300,
-        damping: 24
-      }
-    }
+        damping: 24,
+      },
+    },
   };
 
   return (
@@ -137,7 +133,7 @@ export default function SkillsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 sm:mb-16 space-y-4"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 tracking-tight dark:text-white">
             Technology Stack
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto font-light px-2">
@@ -170,7 +166,7 @@ export default function SkillsSection() {
               key={category.title}
               variants={itemVariants}
               whileHover={{ y: -8 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              transition={{ type: 'spring', stiffness: 300 }}
               className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-sm hover:shadow-lg transition-all duration-300"
             >
               <div className="space-y-4 sm:space-y-6">
@@ -183,7 +179,7 @@ export default function SkillsSection() {
                     <p className="text-xs sm:text-sm text-gray-600 line-clamp-2">{category.description}</p>
                   </div>
                 </div>
-                
+
                 <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {category.skills.map((skill, skillIndex) => (
                     <motion.div
@@ -195,10 +191,7 @@ export default function SkillsSection() {
                     >
                       <span className="text-xs sm:text-sm font-medium text-gray-900">{skill.name}</span>
                       {skill.years && (
-                        <Badge 
-                          variant="outline"
-                          className="text-xs text-blue-600 border-blue-200 bg-white px-1 py-0"
-                        >
+                        <Badge variant="outline" className="text-xs text-blue-600 border-blue-200 bg-white px-1 py-0">
                           {skill.years}y
                         </Badge>
                       )}
@@ -224,12 +217,12 @@ export default function SkillsSection() {
             </div>
             <h3 className="text-2xl font-semibold text-gray-900 mb-4">Continuous Learning</h3>
             <p className="text-lg text-gray-600 font-light leading-relaxed">
-              Technology evolves rapidly, and so do I. I'm constantly exploring new frameworks, 
-              tools, and methodologies to stay at the forefront of modern development.
+              Technology evolves rapidly, and so do I. I'm constantly exploring new frameworks, tools, and methodologies
+              to stay at the forefront of modern development.
             </p>
           </div>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

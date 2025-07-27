@@ -10,7 +10,7 @@ export default function TransitionOverlay() {
 
   useEffect(() => {
     setIsTransitioning(true)
-    const timer = setTimeout(() => setIsTransitioning(false), 600)
+    const timer = setTimeout(() => setIsTransitioning(false), 800)
     return () => clearTimeout(timer)
   }, [pathname])
 
@@ -26,6 +26,11 @@ export default function TransitionOverlay() {
     }
   }
 
+  const overlayTransition = {
+    duration: 0.4,
+    ease: [0.42, 0, 0.58, 1] as const
+  }
+
   return (
     <AnimatePresence>
       {isTransitioning && (
@@ -35,6 +40,7 @@ export default function TransitionOverlay() {
           initial="initial"
           animate="animate"
           exit="exit"
+          transition={overlayTransition}
           className="fixed inset-0 bg-gradient-to-b from-blue-600 to-blue-700 z-50 pointer-events-none"
         />
       )}

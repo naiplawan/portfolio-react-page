@@ -21,23 +21,24 @@ export default function BlogPage() {
     setBlogPosts(getPublishedBlogPosts());
   }, []);
 
-  const allTags = Array.from(new Set(blogPosts.flatMap(post => post.tags)));
+  const allTags = Array.from(new Set(blogPosts.flatMap((post) => post.tags)));
 
-  const filteredPosts = blogPosts.filter(post => {
-    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+  const filteredPosts = blogPosts.filter((post) => {
+    const matchesSearch =
+      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesTag = !selectedTag || post.tags.includes(selectedTag);
     return matchesSearch && matchesTag;
   });
 
-  const featuredPosts = filteredPosts.filter(post => post.featured);
-  const regularPosts = filteredPosts.filter(post => !post.featured);
+  const featuredPosts = filteredPosts.filter((post) => post.featured);
+  const regularPosts = filteredPosts.filter((post) => !post.featured);
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
-      day: 'numeric'
+      day: 'numeric',
     });
   };
 
@@ -47,9 +48,9 @@ export default function BlogPage() {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
+        delayChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
@@ -58,17 +59,17 @@ export default function BlogPage() {
       opacity: 1,
       y: 0,
       transition: {
-        type: "spring" as const,
+        type: 'spring' as const,
         stiffness: 300,
-        damping: 24
-      }
-    }
+        damping: 24,
+      },
+    },
   };
 
   return (
     <div className="min-h-screen bg-gray-50">
       <NavBar />
-      
+
       <section className="pt-24 pb-16 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -77,21 +78,13 @@ export default function BlogPage() {
             transition={{ duration: 0.6 }}
             className="mb-16"
           >
-            <div className="flex justify-between items-center mb-6">
-              <div className="text-center flex-1">
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                  Blog & Insights
-                </h1>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  Sharing knowledge about modern web development, AI integration, and software engineering best practices.
-                </p>
-              </div>
-              <Link href="/blog/manage">
-                <Button variant="outline" className="bg-white hover:bg-gray-50 ml-6">
-                  <Settings className="w-4 h-4 mr-2" />
-                  Manage
-                </Button>
-              </Link>
+            <div className="mb-6 text-center px-2">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white mb-4 tracking-tight leading-tight">
+                Blog & Insights
+              </h1>
+              <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+                Sharing knowledge about modern web development, AI integration, and software engineering best practices.
+              </p>
             </div>
           </motion.div>
 
@@ -114,19 +107,19 @@ export default function BlogPage() {
                   />
                 </div>
                 <Button
-                  variant={selectedTag ? "default" : "outline"}
+                  variant={selectedTag ? 'default' : 'outline'}
                   onClick={() => setSelectedTag('')}
                   className="shrink-0"
                 >
                   All Topics
                 </Button>
               </div>
-              
+
               <div className="flex flex-wrap gap-2">
                 {allTags.map((tag) => (
                   <Button
                     key={tag}
-                    variant={selectedTag === tag ? "default" : "outline"}
+                    variant={selectedTag === tag ? 'default' : 'outline'}
                     size="sm"
                     onClick={() => setSelectedTag(selectedTag === tag ? '' : tag)}
                     className="text-sm"
@@ -141,12 +134,7 @@ export default function BlogPage() {
 
           {/* Featured Posts */}
           {featuredPosts.length > 0 && (
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              className="mb-16"
-            >
+            <motion.div variants={containerVariants} initial="hidden" animate="visible" className="mb-16">
               <h2 className="text-2xl font-bold text-gray-900 mb-8">Featured Articles</h2>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {featuredPosts.map((post) => (
@@ -193,11 +181,7 @@ export default function BlogPage() {
 
           {/* Regular Posts */}
           {regularPosts.length > 0 && (
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-            >
+            <motion.div variants={containerVariants} initial="hidden" animate="visible">
               <h2 className="text-2xl font-bold text-gray-900 mb-8">All Articles</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {regularPosts.map((post) => (
@@ -240,14 +224,15 @@ export default function BlogPage() {
           )}
 
           {filteredPosts.length === 0 && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-center py-16"
-            >
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center py-16">
               <h3 className="text-xl font-semibold text-gray-900 mb-2">No articles found</h3>
               <p className="text-gray-600 mb-6">Try adjusting your search or filter criteria.</p>
-              <Button onClick={() => { setSearchTerm(''); setSelectedTag(''); }}>
+              <Button
+                onClick={() => {
+                  setSearchTerm('');
+                  setSelectedTag('');
+                }}
+              >
                 Clear Filters
               </Button>
             </motion.div>

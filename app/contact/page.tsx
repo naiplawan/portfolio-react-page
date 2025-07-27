@@ -26,12 +26,7 @@ export default function ContactPage() {
     if (!form.current) return;
 
     emailjs
-      .sendForm(
-        'service_3wygx3u',
-        'template_p6wyyhb',
-        form.current,
-        'BG8fz_8Cxun8YIhHv'
-      )
+      .sendForm('service_3wygx3u', 'template_p6wyyhb', form.current, 'BG8fz_8Cxun8YIhHv')
       .then(
         (result) => {
           console.log('Email sent successfully:', result.text);
@@ -53,7 +48,7 @@ export default function ContactPage() {
   return (
     <>
       <NavBar />
-      <div className="flex flex-col justify-center m-10 pr-4 pl-4 md:pr-20 md:pl-20 min-h-screen">
+      <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white py-16 px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}

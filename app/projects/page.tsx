@@ -16,12 +16,12 @@ const StatusBadge = React.memo(({ status }: { status: Project['status'] }) => {
   const statusConfig = {
     live: { label: 'Live', color: 'bg-green-500', icon: Zap },
     development: { label: 'In Development', color: 'bg-yellow-500', icon: Clock },
-    archived: { label: 'Archived', color: 'bg-gray-500', icon: Clock }
+    archived: { label: 'Archived', color: 'bg-gray-500', icon: Clock },
   };
-  
+
   const config = statusConfig[status];
   const Icon = config.icon;
-  
+
   return (
     <Badge className={`${config.color} text-white`}>
       <Icon className="w-3 h-3 mr-1" />
@@ -34,7 +34,7 @@ StatusBadge.displayName = 'StatusBadge';
 
 const MetricsCard = React.memo(({ metrics }: { metrics: Project['metrics'] }) => {
   if (!metrics) return null;
-  
+
   return (
     <div className="grid grid-cols-2 gap-2 p-3 bg-muted/50 rounded-lg">
       {metrics.users && (
@@ -71,11 +71,11 @@ const ProjectCard = React.memo(({ project, index }: ProjectCardProps) => {
   const handleGithubClick = useCallback(() => {
     window.open(project.githubUrl, '_blank', 'noopener,noreferrer');
   }, [project.githubUrl]);
-  
+
   const handleLiveClick = useCallback(() => {
     window.open(project.liveUrl, '_blank', 'noopener,noreferrer');
   }, [project.liveUrl]);
-  
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -99,39 +99,46 @@ const ProjectCard = React.memo(({ project, index }: ProjectCardProps) => {
             </div>
             <span className="text-xs text-muted-foreground">{project.completedYear}</span>
           </div>
-          
+
           <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden group-hover:scale-105 transition-transform duration-500">
-            <Image 
-              src={project.image} 
+            <Image
+              src={project.image}
               alt={`${project.title} - ${project.description.slice(0, 80)}...`}
-              fill 
-              className="object-cover transition-transform duration-500 group-hover:scale-110" 
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-110"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               priority={project.featured}
             />
           </div>
-          
-          <CardTitle id={`project-title-${project.id}`} className="text-xl group-hover:text-primary transition-colors duration-300">
+
+          <CardTitle
+            id={`project-title-${project.id}`}
+            className="text-xl group-hover:text-primary transition-colors duration-300"
+          >
             {project.title}
           </CardTitle>
         </CardHeader>
-        
+
         <CardContent className="space-y-4">
           <div>
             <p className="text-muted-foreground text-sm font-medium mb-1">Problem</p>
             <p className="text-sm text-foreground/80 mb-3">{project.problemStatement}</p>
-            
+
             <p className="text-muted-foreground text-sm font-medium mb-1">Solution</p>
             <p className="text-sm text-foreground/80">{project.solution}</p>
           </div>
 
           <Separator />
-          
+
           <MetricsCard metrics={project.metrics} />
 
           <div className="flex flex-wrap gap-2">
             {project.technologies.map((tech) => (
-              <Badge key={tech} variant="secondary" className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors">
+              <Badge
+                key={tech}
+                variant="secondary"
+                className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors"
+              >
                 {tech}
               </Badge>
             ))}
@@ -185,11 +192,11 @@ const FeaturedProject = React.memo(({ project }: { project: Project }) => {
   const handleGithubClick = useCallback(() => {
     window.open(project.githubUrl, '_blank', 'noopener,noreferrer');
   }, [project.githubUrl]);
-  
+
   const handleLiveClick = useCallback(() => {
     window.open(project.liveUrl, '_blank', 'noopener,noreferrer');
   }, [project.liveUrl]);
-  
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -215,29 +222,29 @@ const FeaturedProject = React.memo(({ project }: { project: Project }) => {
               </Badge>
             </div>
           </div>
-          
+
           <div className="p-8 flex flex-col justify-center">
             <div className="flex items-center gap-2 mb-4">
               <StatusBadge status={project.status} />
               <span className="text-sm text-muted-foreground">{project.completedYear}</span>
             </div>
-            
+
             <h2 className="text-3xl font-bold mb-4">{project.title}</h2>
-            
+
             <div className="space-y-4 mb-6">
               <div>
                 <p className="text-sm font-medium text-muted-foreground mb-1">Challenge</p>
                 <p className="text-sm">{project.problemStatement}</p>
               </div>
-              
+
               <div>
                 <p className="text-sm font-medium text-muted-foreground mb-1">Solution</p>
                 <p className="text-sm">{project.solution}</p>
               </div>
             </div>
-            
+
             <MetricsCard metrics={project.metrics} />
-            
+
             <div className="flex flex-wrap gap-2 my-4">
               {project.technologies.slice(0, 4).map((tech) => (
                 <Badge key={tech} variant="secondary" className="text-xs">
@@ -250,7 +257,7 @@ const FeaturedProject = React.memo(({ project }: { project: Project }) => {
                 </Badge>
               )}
             </div>
-            
+
             <div className="flex gap-3">
               <Button
                 variant="outline"
@@ -284,11 +291,11 @@ FeaturedProject.displayName = 'FeaturedProject';
 export default function ProjectsPage() {
   const featuredProjects = useMemo(() => getFeaturedProjects(), []);
   // const regularProjects = useMemo(() => projects.filter(p => !p.featured), []);
-  
+
   return (
     <>
       <NavBar />
-      <main className="container mx-auto px-4 py-8 mt-10">
+      <main className="pt-24 pb-16 px-6 lg:px-8">
         <motion.header
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -297,8 +304,8 @@ export default function ProjectsPage() {
         >
           <h1 className="text-4xl font-bold mb-4">Portfolio Projects</h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            A showcase of full-stack applications demonstrating modern web development practices,
-            from AI-powered solutions to enterprise-grade platforms.
+            A showcase of full-stack applications demonstrating modern web development practices, from AI-powered
+            solutions to enterprise-grade platforms.
           </p>
         </motion.header>
 
@@ -331,7 +338,7 @@ export default function ProjectsPage() {
           >
             All Projects
           </motion.h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} />
@@ -339,7 +346,7 @@ export default function ProjectsPage() {
           </div>
         </section>
       </main>
-      
+
       {/* Structured Data for SEO */}
       <script
         type="application/ld+json"
