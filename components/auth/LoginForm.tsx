@@ -35,7 +35,7 @@ export default function LoginForm({ onLogin }: LoginFormProps) {
     // Simulate loading delay
     await new Promise(resolve => setTimeout(resolve, 800));
 
-    const success = login(username, password);
+    const success = login({ username, password });
     
     if (success) {
       onLogin?.();

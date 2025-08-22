@@ -10,7 +10,9 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { projects, getFeaturedProjects } from '@/lib/projects-data';
 import { Project, ProjectCardProps } from '@/lib/types';
-import { Star, ExternalLink, Github as GithubIcon, TrendingUp, Users, Zap, Clock } from 'lucide-react';
+import ExternalLink from '@/components/ui/icons/ExternalLink';
+import Github from '@/components/ui/icons/Github';
+import { Star, TrendingUp, Users, Zap, Clock } from 'lucide-react';
 
 const StatusBadge = React.memo(({ status }: { status: Project['status'] }) => {
   const statusConfig = {
@@ -165,7 +167,7 @@ const ProjectCard = React.memo(({ project, index }: ProjectCardProps) => {
               className="flex-1 group-hover:border-primary transition-colors"
               aria-label={`View ${project.title} source code on GitHub`}
             >
-              <GithubIcon className="w-4 h-4 mr-2" />
+              <Github size={16} />
               Source
             </Button>
             {project.liveUrl && (
@@ -175,7 +177,7 @@ const ProjectCard = React.memo(({ project, index }: ProjectCardProps) => {
                 className="flex-1 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary"
                 aria-label={`View ${project.title} live demo`}
               >
-                <ExternalLink className="w-4 h-4 mr-2" />
+                <ExternalLink size={16} />
                 Live Demo
               </Button>
             )}
@@ -265,7 +267,7 @@ const FeaturedProject = React.memo(({ project }: { project: Project }) => {
                 className="flex-1"
                 aria-label={`View ${project.title} source code on GitHub`}
               >
-                <GithubIcon className="w-4 h-4 mr-2" />
+                <Github size={16} />
                 View Source
               </Button>
               {project.liveUrl && (
@@ -274,7 +276,7 @@ const FeaturedProject = React.memo(({ project }: { project: Project }) => {
                   className="flex-1 bg-gradient-to-r from-primary to-primary/80"
                   aria-label={`View ${project.title} live demo`}
                 >
-                  <ExternalLink className="w-4 h-4 mr-2" />
+                  <ExternalLink size={16} />
                   Live Demo
                 </Button>
               )}

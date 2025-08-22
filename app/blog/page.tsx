@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { Calendar, Clock, Search, Tag, ArrowRight, Settings } from 'lucide-react';
+import { Calendar, Clock, Search, Tag, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import NavBar from '@/components/portfolio/NavBar';
 import Footer from '@/components/portfolio/Footer';

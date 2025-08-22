@@ -2,8 +2,12 @@
 
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Download, Mail, ArrowRight } from 'lucide-react';
+import Download from '@/components/ui/icons/Download';
+import Mail from '@/components/ui/icons/Mail';
+import ArrowRight from '@/components/ui/icons/ArrowRight';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import TypewriterEffect from '@/components/ui/TypewriterEffect';
+import ParticleBackground from '@/components/ui/ParticleBackground';
 
 function ContentSection() {
   const containerVariants = {
@@ -30,8 +34,9 @@ function ContentSection() {
   };
 
   return (
-    <section className="pt-20 pb-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative pt-20 pb-8 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center">
+      <ParticleBackground />
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -45,9 +50,17 @@ function ContentSection() {
               <span className="text-blue-600">Plookaom</span>
             </h1>
 
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed px-2">
-              Performance-First Fullstack Architect crafting scalable solutions that drive measurable business impact
-            </p>
+            <div className="text-lg sm:text-xl md:text-2xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed px-2">
+              <TypewriterEffect 
+                words={[
+                  "Performance-First Fullstack Architect",
+                  "Building Scalable Web Solutions", 
+                  "Crafting Modern User Experiences",
+                  "Delivering Measurable Business Impact"
+                ]}
+                className="text-blue-600 font-medium"
+              />
+            </div>
 
             <div className="flex flex-wrap justify-center gap-2 sm:gap-3 max-w-2xl mx-auto px-4">
               <span className="px-2 py-1 sm:px-3 sm:py-1 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm font-medium">
@@ -75,7 +88,7 @@ function ContentSection() {
               onClick={() => (window.location.href = '/projects')}
             >
               View My Work
-              <ArrowRight className="w-4 h-4 ml-2" />
+              <ArrowRight size={16} />
             </Button>
 
             <Button
@@ -84,7 +97,7 @@ function ContentSection() {
               className="w-full sm:w-auto border-gray-300 text-gray-700 px-6 sm:px-8 py-3 rounded-full font-medium hover:bg-gray-50 transition-all duration-200 text-sm sm:text-base dark:text-white"
               onClick={() => window.open('/Rachaphol_Resume.pdf', '_blank')}
             >
-              <Download className="w-4 h-4 mr-2" />
+              <Download size={16} />
               Download CV
             </Button>
           </motion.div>
@@ -112,7 +125,7 @@ function ContentSection() {
               className="h-10 w-10 sm:h-12 sm:w-12 rounded-full hover:bg-gray-100 transition-all duration-200"
               onClick={() => (window.location.href = 'mailto:rachaphol.plo@gmail.com')}
             >
-              <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600" />
+              <Mail size={20} color="#6b7280" />
             </Button>
           </motion.div>
         </motion.div>

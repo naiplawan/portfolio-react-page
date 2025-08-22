@@ -128,21 +128,6 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 }
 
-// Hook-based error boundary for easier usage
-export function withErrorBoundary<P extends object>(
-  Component: React.ComponentType<P>,
-  fallback?: ReactNode,
-  onError?: (error: Error, errorInfo: ErrorInfo) => void
-) {
-  const WrappedComponent = (props: P) => (
-    <ErrorBoundary fallback={fallback} onError={onError}>
-      <Component {...props} />
-    </ErrorBoundary>
-  );
-
-  WrappedComponent.displayName = `withErrorBoundary(${Component.displayName || Component.name})`;
-  return WrappedComponent;
-}
 
 // Simplified error boundary for specific sections
 export function SectionErrorBoundary({ 

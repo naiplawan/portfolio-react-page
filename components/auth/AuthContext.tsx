@@ -2,9 +2,14 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
+interface LoginCredentials {
+  username: string;
+  password: string;
+}
+
 interface AuthContextType {
   isAuthenticated: boolean;
-  login: (username: string, password: string) => boolean;
+  login: (credentials: LoginCredentials) => boolean;
   logout: () => void;
   loading: boolean;
 }
@@ -44,7 +49,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setLoading(false);
   }, []);
 
-  const login = (username: string, password: string): boolean => {
+  const login = ({ username, password }: LoginCredentials): boolean => {
     if (username === ADMIN_CREDENTIALS.username && password === ADMIN_CREDENTIALS.password) {
       const authData = {
         token: 'simple-auth-token',

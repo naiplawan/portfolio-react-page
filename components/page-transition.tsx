@@ -7,26 +7,22 @@ import { usePathname } from 'next/navigation'
 const pageVariants = {
   initial: {
     opacity: 0,
-    y: 20,
-    scale: 0.98,
+    y: 10,
   },
   in: {
     opacity: 1,
     y: 0,
-    scale: 1,
   },
   out: {
     opacity: 0,
-    y: -20,
-    scale: 1.02,
+    y: -10,
   },
 }
 
 const pageTransition = {
-  type: 'spring' as const,
-  stiffness: 400,
-  damping: 40,
-  mass: 0.8,
+  type: 'tween' as const,
+  duration: 0.3,
+  ease: [0.4, 0, 0.2, 1] as const,
 }
 
 interface PageTransitionProps {
@@ -46,7 +42,6 @@ export default function PageTransition({ children }: PageTransitionProps) {
         variants={pageVariants}
         transition={pageTransition}
         className="min-h-screen w-full"
-        style={{ willChange: 'transform, opacity' }}
       >
         {children}
       </motion.div>

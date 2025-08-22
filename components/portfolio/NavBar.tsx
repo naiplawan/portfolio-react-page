@@ -6,7 +6,8 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { DarkModeToggle } from '@/components/ui/dark-mode-toggle';
-import { Menu, X } from 'lucide-react';
+import Menu from '@/components/ui/icons/Menu';
+import { X } from 'lucide-react';
 
 function NavBar() {
   const router = useRouter();
@@ -22,10 +23,8 @@ function NavBar() {
 
   const handleNavigation = (href: string) => {
     setIsOpen(false);
-    // Small delay to ensure mobile menu closes before navigation
-    setTimeout(() => {
-      router.push(href);
-    }, 100);
+    // Immediate navigation for smoother experience
+    router.push(href);
   };
 
   // Close mobile menu on escape key
@@ -103,7 +102,7 @@ function NavBar() {
                   aria-expanded={isOpen}
                   aria-controls="mobile-menu"
                 >
-                  {isOpen ? <X className="h-4 w-4 sm:h-5 sm:w-5" /> : <Menu className="h-4 w-4 sm:h-5 sm:w-5" />}
+                  {isOpen ? <X className="h-4 w-4 sm:h-5 sm:w-5" /> : <Menu size={20} />}
                 </Button>
               </SheetTrigger>
               <SheetContent 

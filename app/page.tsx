@@ -5,7 +5,6 @@ import ContentSection from '@/components/portfolio/ContentSection';
 import SkillsSection from '@/components/portfolio/SkillsSection';
 import Footer from '@/components/portfolio/Footer';
 import { PersonStructuredData, WebsiteStructuredData } from '@/components/seo/structured-data';
-import { motion } from 'framer-motion';
 
 export default function HomePage() {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://rachaphol-portfolio.vercel.app';
@@ -31,44 +30,12 @@ export default function HomePage() {
         url={baseUrl}
       />
 
-      <motion.div
-        className="w-full min-h-screen flex flex-col justify-start overflow-hidden"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-      >
-        <motion.div
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-        >
-          <NavBar />
-        </motion.div>
-
-        <motion.div
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-        >
-          <ContentSection />
-        </motion.div>
-
-        <motion.div
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-        >
-          <SkillsSection />
-        </motion.div>
-
-        <motion.div
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.9 }}
-        >
-          <Footer />
-        </motion.div>
-      </motion.div>
+      <div className="w-full min-h-screen flex flex-col justify-start">
+        <NavBar />
+        <ContentSection />
+        <SkillsSection />
+        <Footer />
+      </div>
     </>
   );
 }

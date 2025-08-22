@@ -6,9 +6,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
-import { Mail, Send, CheckCircle, MapPin } from 'lucide-react';
+import Mail from '@/components/ui/icons/Mail';
+import Send from '@/components/ui/icons/Send';
+import { CheckCircle, MapPin } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { trackEvent } from '@/components/analytics';
+import { trackEvent } from '@/lib/analytics';
 
 export default function Contact() {
   const form = useRef<HTMLFormElement>(null);
@@ -295,7 +297,7 @@ export default function Contact() {
                       </>
                     ) : (
                       <>
-                        <Send className="w-4 h-4 mr-2" />
+                        <Send size={16} />
                         Send Message
                       </>
                     )}

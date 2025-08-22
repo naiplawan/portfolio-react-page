@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 
 declare global {
   interface Window {
-    gtag: (...args: any[]) => void
+    gtag: (...args: unknown[]) => void
   }
 }
 
@@ -48,20 +48,3 @@ export function Analytics() {
   )
 }
 
-export function trackEvent(eventName: string, parameters?: Record<string, any>) {
-  if (!GA_TRACKING_ID || !window.gtag) return
-
-  window.gtag('event', eventName, {
-    event_category: 'engagement',
-    event_label: eventName,
-    ...parameters,
-  })
-}
-
-export function trackPageView(url: string) {
-  if (!GA_TRACKING_ID || !window.gtag) return
-
-  window.gtag('config', GA_TRACKING_ID, {
-    page_path: url,
-  })
-}
